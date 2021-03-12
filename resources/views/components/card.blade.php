@@ -1,4 +1,4 @@
-@props(['titolo', 'sottotitolo', 'categoria', 'body']),
+@props(['titolo', 'sottotitolo', 'categoria', 'body','data']),
 
 {{-- 
 <div class="card">
@@ -19,23 +19,23 @@
    
         
             
-                <li class="articles__article" style="--animation-order:1"><a class="articles__link">
+                <li class="articles__article" style="--animation-order:1"><a class="articles__link" href="{{ route('articoli.show', ['articolo'=>$titolo])}}">
                         <div class="articles__content articles__content--lhs">
                             <h2 class="articles__title">{{$titolo}}</h2>
-                            <p class="articles__body">{{$body}} [...]</p>
+                            <p class="articles__body">{{substr($body,0,12)}} [...]</p>
                             <h3 class="articles__subtitle">{{$sottotitolo}}</h3>
                             <div class="articles__footer">
                                 <p>{{$categoria}}</p>
-                                <time>1 Jan 2020</time>
+                                <time>{{$data}}</time>
                             </div>
                         </div>
                         <div class="articles__content articles__content--rhs">
                             <h2 class="articles__title">{{$titolo}}</h2>
-                            <p class="articles__body">{{$body}} [...]</p>
+                            <p class="articles__body">{{substr($body,0,12)}}  [...]</p>
                             <p class="articles__subtitle">{{$sottotitolo}}</p>
                             <div class="articles__footer">
                                 <p>{{$categoria}}</p>
-                                <time>1 Jan 2020</time>
+                                <time>{{$data}}</time>
                             </div>
                         </div>
                     </a>

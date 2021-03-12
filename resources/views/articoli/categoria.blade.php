@@ -16,6 +16,7 @@
         sottotitolo="{{$categoria['sottotitolo']}}"
         categoria="{{$categoria['categoria']}}"
         body="{{$categoria['body']}}"
+        data="{{$categoria['data']}}"
         />
         </div>
         @endforeach

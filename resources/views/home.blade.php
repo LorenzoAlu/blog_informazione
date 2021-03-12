@@ -15,6 +15,7 @@ titolo="{{$ultimo['titolo']}}"
 sottotitolo="{{$ultimo['sottotitolo']}}"
 categoria="{{$ultimo['categoria']}}"
 body="{{$ultimo['body']}}"
+data="{{$ultimo['data']}}"
 />
 </div>
 @endforeach
@@ -27,14 +28,12 @@ body="{{$ultimo['body']}}"
 
 <div class="container my-5">
     <div class="row justify-content-center">
+      <div class="col-12">
+        <h2 class="text-center">Dicci cosa ne pensi</h2>
+      </div>
         <div class="col-md-8">
             <form method="POST" action="{{route('contacts.send')}}">
                 @csrf
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Inserisci E-mail</label>
-                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
                 <div class="form-group">
                   <label for="nome">Nome</label>
                   <input type="text" name="nome" class="form-control" id="nome">
@@ -42,9 +41,14 @@ body="{{$ultimo['body']}}"
                 <div class="alert">{{$message}}</div>    
                 @enderror
                 </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Inserisci E-mail</label>
+                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
                 <label for="messaggio">Messaggio</label>
                 <textarea class="form-control" name="messaggio" id="" cols="30" rows="10"></textarea>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-warning w-100">Inviaci le tue notizie</button>
               </form>   
 
         </div>

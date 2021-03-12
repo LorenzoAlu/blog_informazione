@@ -29,53 +29,62 @@ class HomeController extends Controller
             'titolo' => 'titolo 1',
             'sottotitolo'  => 'sottotitolo 1',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '10/09/20'
+            
         ],
 
         [
             'titolo' => 'titolo 2',
             'sottotitolo'  => 'sottotitolo 2',
             'categoria' => 'moto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '17/08/21'
         ],
 
         [
             'titolo' => 'titolo 3',
             'sottotitolo'  => 'sottotitolo 3',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '5/03/2020'
         ],
 
         [
             'titolo' => 'titolo 4',
             'sottotitolo'  => 'sottotitolo 4',
             'categoria' => 'moto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '24/12/1978'
         ],
 
         [
             'titolo' => 'titolo 5',
             'sottotitolo'  => 'sottotitolo 5',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '06/05/92'
         ],
         [
             'titolo' => 'titolo 6',
             'sottotitolo'  => 'sottotitolo 6',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '24/09/94'
         ],
         [
           'titolo' => 'titolo 7',
           'sottotitolo'  => 'sottotitolo 7',
           'categoria' => 'auto',
-          'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+          'data' => '09/03/1908'
         ],
         [
           'titolo' => 'titolo 8',
           'sottotitolo'  => 'sottotitolo 8',
           'categoria' => 'auto',
-          'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+          'data' => '15/04/1912'
       ]
     
     ]);
@@ -98,53 +107,62 @@ class HomeController extends Controller
             'titolo' => 'titolo 1',
             'sottotitolo'  => 'sottotitolo 1',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '10/09/20'
+            
         ],
 
         [
             'titolo' => 'titolo 2',
             'sottotitolo'  => 'sottotitolo 2',
             'categoria' => 'moto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '17/08/21'
         ],
 
         [
             'titolo' => 'titolo 3',
             'sottotitolo'  => 'sottotitolo 3',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '5/03/2020'
         ],
 
         [
             'titolo' => 'titolo 4',
             'sottotitolo'  => 'sottotitolo 4',
             'categoria' => 'moto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '24/12/1978'
         ],
 
         [
             'titolo' => 'titolo 5',
             'sottotitolo'  => 'sottotitolo 5',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '06/05/92'
         ],
         [
             'titolo' => 'titolo 6',
             'sottotitolo'  => 'sottotitolo 6',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '24/09/94'
         ],
         [
           'titolo' => 'titolo 7',
           'sottotitolo'  => 'sottotitolo 7',
           'categoria' => 'auto',
-          'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+          'data' => '09/03/1908'
         ],
         [
           'titolo' => 'titolo 8',
           'sottotitolo'  => 'sottotitolo 8',
           'categoria' => 'auto',
-          'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+          'data' => '15/04/1912'
       ]
     
     ]);
@@ -160,53 +178,62 @@ class HomeController extends Controller
               'titolo' => 'titolo 1',
               'sottotitolo'  => 'sottotitolo 1',
               'categoria' => 'auto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '10/09/20'
+              
           ],
   
           [
               'titolo' => 'titolo 2',
               'sottotitolo'  => 'sottotitolo 2',
               'categoria' => 'moto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '17/08/21'
           ],
   
           [
               'titolo' => 'titolo 3',
               'sottotitolo'  => 'sottotitolo 3',
               'categoria' => 'auto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '5/03/2020'
           ],
   
           [
               'titolo' => 'titolo 4',
               'sottotitolo'  => 'sottotitolo 4',
               'categoria' => 'moto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '24/12/1978'
           ],
   
           [
               'titolo' => 'titolo 5',
               'sottotitolo'  => 'sottotitolo 5',
               'categoria' => 'auto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '06/05/92'
           ],
           [
               'titolo' => 'titolo 6',
               'sottotitolo'  => 'sottotitolo 6',
               'categoria' => 'auto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '24/09/94'
           ],
           [
             'titolo' => 'titolo 7',
             'sottotitolo'  => 'sottotitolo 7',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '09/03/1908'
           ],
           [
             'titolo' => 'titolo 8',
             'sottotitolo'  => 'sottotitolo 8',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '15/04/1912'
         ]
       
       ]);
@@ -235,53 +262,62 @@ class HomeController extends Controller
               'titolo' => 'titolo 1',
               'sottotitolo'  => 'sottotitolo 1',
               'categoria' => 'auto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '10/09/20'
+              
           ],
   
           [
               'titolo' => 'titolo 2',
               'sottotitolo'  => 'sottotitolo 2',
               'categoria' => 'moto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '17/08/21'
           ],
   
           [
               'titolo' => 'titolo 3',
               'sottotitolo'  => 'sottotitolo 3',
               'categoria' => 'auto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '5/03/2020'
           ],
   
           [
               'titolo' => 'titolo 4',
               'sottotitolo'  => 'sottotitolo 4',
               'categoria' => 'moto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '24/12/1978'
           ],
   
           [
               'titolo' => 'titolo 5',
               'sottotitolo'  => 'sottotitolo 5',
               'categoria' => 'auto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '06/05/92'
           ],
           [
               'titolo' => 'titolo 6',
               'sottotitolo'  => 'sottotitolo 6',
               'categoria' => 'auto',
-              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+              'data' => '24/09/94'
           ],
           [
             'titolo' => 'titolo 7',
             'sottotitolo'  => 'sottotitolo 7',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '09/03/1908'
           ],
           [
             'titolo' => 'titolo 8',
             'sottotitolo'  => 'sottotitolo 8',
             'categoria' => 'auto',
-            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
+            'data' => '15/04/1912'
         ]
       
       ]);
