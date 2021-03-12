@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-{{-- <x-header-small/> --}}
+<x-header_small/>
 
 @section('content')
 <div class="container my-5 thankyou">

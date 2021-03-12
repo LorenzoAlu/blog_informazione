@@ -10808,7 +10808,6 @@ body {
 /* header small */
 .bg-image_small {
   height: 50vh;
-  background: url("/public/media/header_1.jpg");
   background-size: cover;
   background-position: center;
   filter: blur(2px);
@@ -10848,6 +10847,10 @@ body {
   border: 2px dashed var(--colour-background);
   background-image: repeating-linear-gradient(-24deg, transparent, transparent 4px, var(--strisce) 0, var(--strisce) 5px);
   z-index: -1;
+}
+
+.margin-top-custom {
+  margin-top: 100px;
 }
 
 /* card */

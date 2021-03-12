@@ -25,13 +25,10 @@
 <body>
     <div id="app">
      
-
-<x-navbar/>
-
-
-       
-       
-          <main class="py-4">
+        
+        
+        <main>
+            <x-navbar/>
             @yield('content')
         </main>
 
@@ -39,7 +36,7 @@
  <!-- footer  -->
 
  <div class="container-fluid bg-dark mt-5 pb-5 ">
-  <div class="row justify-content-around">
+  <div class="row justify-content-around ">
 
       <div class="col-12 col-md-6 text-white my-5 text-center text-md-start">
 

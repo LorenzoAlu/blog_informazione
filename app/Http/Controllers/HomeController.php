@@ -163,7 +163,8 @@ class HomeController extends Controller
           'categoria' => 'auto',
           'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
           'data' => '15/04/1912'
-      ]
+        ],
+       
     
     ]);
 
@@ -234,7 +235,7 @@ class HomeController extends Controller
             'categoria' => 'auto',
             'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!',
             'data' => '15/04/1912'
-        ]
+          ],
       
       ]);
 

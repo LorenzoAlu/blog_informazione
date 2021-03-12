@@ -99,7 +99,7 @@ transition: 1s;
 .bg-image_small{
   
   height: 50vh;
-  background: url("/public/media/header_1.jpg");
+  // background: url("/media/header_1.jpg");
   background-size: cover ;
   background-position: center;
   filter: blur(2px);
@@ -152,6 +152,11 @@ transition: 1s;
   );
   z-index: -1;
 
+}
+
+
+.margin-top-custom{
+  margin-top:100px;
 }
 
 

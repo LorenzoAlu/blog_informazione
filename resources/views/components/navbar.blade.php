@@ -1,6 +1,6 @@
     <!-- navbar -->
 
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark  p-0 m-0  fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark m-0 p-0 fixed-top">
 
         <!--  Show this only on mobile to medium screens  -->
         <a class="navbar-brand d-lg-none" href="#"><img class="logo_navbar_small" width="100px" alt="foto logo "></a>
@@ -18,7 +18,7 @@
                     <a class="nav-link active" href="{{route('home')}}">Home <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Esplora</a>
+                    <a class="nav-link" href="{{route('articoli.mostratutti')}}">Esplora</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Random</a>
