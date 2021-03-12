@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
+<x-header/>
+
 @section('content')
 
 <div class="container-fluid">
-  <div class="row">
-    <h2>Ultime Notizie</h2>
+  <div class="row ">
+    <div class="col-12 text-center mb-5"><h2>Ultime Notizie</h2></div>
 @foreach ($ultimi as $ultimo)
 
-<div class="col-4">
+<div class="col-4 d-flex justify-content-center">
 <x-card 
 titolo="{{$ultimo['titolo']}}"
 sottotitolo="{{$ultimo['sottotitolo']}}"
@@ -23,7 +25,7 @@ body="{{$ultimo['body']}}"
 
 
 
-<div class="container">
+<div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <form method="POST" action="{{route('contacts.send')}}">
