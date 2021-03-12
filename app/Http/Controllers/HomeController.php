@@ -327,10 +327,9 @@ class HomeController extends Controller
         return $articolo['categoria'] == $categoria;
       });
 
+      
 
-
-
-        return view ('articoli.categoria', ['articoli'=>$filtro]);
+        return view ('articoli.categoria', compact('filtro'));
 
       }
 

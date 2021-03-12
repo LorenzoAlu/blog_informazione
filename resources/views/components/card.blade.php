@@ -1,7 +1,7 @@
 @props(['titolo', 'sottotitolo', 'categoria', 'body','data']),
 
-{{-- 
-<div class="card">
+
+{{-- <div class="card">
     <div class="card-body">
         <h5 class="card-title">{{ $titolo }}</h5>
         <h4 class="card-text">{{ $sottotitolo }}</h4>
@@ -11,8 +11,8 @@
         <a href="{{ route('articoli.show', ['articolo'=>$titolo])}}" class="btn btn-primary">VAI ALL'ARTICOLO</a>
     </div>
 </div>
- --}}
 
+ --}}
 
 
 
@@ -40,9 +40,5 @@
                         </div>
                     </a>
                 </li>
-           
-        
-
-   
 
 

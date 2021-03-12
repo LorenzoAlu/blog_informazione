@@ -36,7 +36,7 @@
  <!-- footer  -->
 
  <div class="container-fluid bg-dark mt-5 pb-5 ">
-  <div class="row justify-content-around ">
+  <div class="row justify-content-around margin-top-custom-2">
 
       <div class="col-12 col-md-6 text-white my-5 text-center text-md-start">
 
