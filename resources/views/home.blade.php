@@ -1,6 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="container-fluid">
+  <div class="row">
+    <h2>Ultime Notizie</h2>
+@foreach ($ultimi as $ultimo)
+
+<div class="col-4">
+<x-card 
+titolo="{{$ultimo['titolo']}}"
+sottotitolo="{{$ultimo['sottotitolo']}}"
+categoria="{{$ultimo['categoria']}}"
+body="{{$ultimo['body']}}"
+/>
+</div>
+@endforeach
+
+  </div>
+</div>
+
+
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -26,4 +48,5 @@
         </div>
     </div>
 </div>
+
 @endsection
