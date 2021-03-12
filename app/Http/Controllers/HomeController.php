@@ -152,5 +152,150 @@ class HomeController extends Controller
       return view('articoli.mostratutti',compact('articoli'));
     }
 
+      public function show($titolo){
+
+        $articoli = collect([
+
+          [
+              'titolo' => 'titolo 1',
+              'sottotitolo'  => 'sottotitolo 1',
+              'categoria' => 'auto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+  
+          [
+              'titolo' => 'titolo 2',
+              'sottotitolo'  => 'sottotitolo 2',
+              'categoria' => 'moto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+  
+          [
+              'titolo' => 'titolo 3',
+              'sottotitolo'  => 'sottotitolo 3',
+              'categoria' => 'auto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+  
+          [
+              'titolo' => 'titolo 4',
+              'sottotitolo'  => 'sottotitolo 4',
+              'categoria' => 'moto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+  
+          [
+              'titolo' => 'titolo 5',
+              'sottotitolo'  => 'sottotitolo 5',
+              'categoria' => 'auto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+          [
+              'titolo' => 'titolo 6',
+              'sottotitolo'  => 'sottotitolo 6',
+              'categoria' => 'auto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+          [
+            'titolo' => 'titolo 7',
+            'sottotitolo'  => 'sottotitolo 7',
+            'categoria' => 'auto',
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+          [
+            'titolo' => 'titolo 8',
+            'sottotitolo'  => 'sottotitolo 8',
+            'categoria' => 'auto',
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+        ]
+      
+      ]);
+
+
+            $filtro=$articoli->filter(function ($articolo) use($titolo){
+              return $articolo['titolo'] == $titolo;
+            })->first();
+
+            $correlati=$articoli->filter(function($articolo) use ($filtro){
+              return $articolo['categoria'] ==$filtro['categoria'];
+            });
+
+            $correlati->shift();
+
+
+        return view('articoli.show', compact('filtro','correlati'));
+      }
+
+      public function mostraCategoria($categoria){
+
+
+        $articoli = collect([
+
+          [
+              'titolo' => 'titolo 1',
+              'sottotitolo'  => 'sottotitolo 1',
+              'categoria' => 'auto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+  
+          [
+              'titolo' => 'titolo 2',
+              'sottotitolo'  => 'sottotitolo 2',
+              'categoria' => 'moto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+  
+          [
+              'titolo' => 'titolo 3',
+              'sottotitolo'  => 'sottotitolo 3',
+              'categoria' => 'auto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+  
+          [
+              'titolo' => 'titolo 4',
+              'sottotitolo'  => 'sottotitolo 4',
+              'categoria' => 'moto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+  
+          [
+              'titolo' => 'titolo 5',
+              'sottotitolo'  => 'sottotitolo 5',
+              'categoria' => 'auto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+          [
+              'titolo' => 'titolo 6',
+              'sottotitolo'  => 'sottotitolo 6',
+              'categoria' => 'auto',
+              'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+          [
+            'titolo' => 'titolo 7',
+            'sottotitolo'  => 'sottotitolo 7',
+            'categoria' => 'auto',
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+          ],
+          [
+            'titolo' => 'titolo 8',
+            'sottotitolo'  => 'sottotitolo 8',
+            'categoria' => 'auto',
+            'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus, totam quos illo dolorum error incidunt in exercitationem sed quas quod dicta, doloribus placeat? Qui reprehenderit quod ipsum illo eos tenetur!'
+        ]
+      
+      ]);
+
+      $filtro=$articoli->filter(function ($articolo) use($categoria){
+        return $articolo['categoria'] == $categoria;
+      });
+
+
+
+
+        return view ('articoli.categoria', ['articoli'=>$filtro]);
+
+      }
+
 
 }

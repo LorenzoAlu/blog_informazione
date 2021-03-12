@@ -27,3 +27,5 @@ Route::get('/',[HomeController::class, 'index'])->name('home');
 Route::get('/articoli/mostratutti',[HomeController::class, 'mostraTutti'])->name('articoli.mostratutti');
 Route::post('/contacts/send',[ContactController::class,'send'])->name('contacts.send');
 Route::get('/contacts/thankyou',[ContactController::class,'thankyou'])->name('contacts.thankyou');
+Route::get('/articoli/{articolo}/show',[HomeController::class, 'show'])->name('articoli.show');
+Route::get('/articoli/{categoria}',[HomeController::class, 'mostraCategoria'])->name('articoli.categoria');
