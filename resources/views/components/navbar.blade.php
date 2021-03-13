@@ -27,12 +27,12 @@
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="articoli.auto">test auto </a></li>
-                        <li><a class="dropdown-item" href="articoli.moto">moto mona</a></li>
-                        <li><a class="dropdown-item" href="#">Politica</a></li>
-                        <li><a class="dropdown-item" href="#">Sport</a></li>
-                        <li><a class="dropdown-item" href="#">Attualità</a></li>
-                        <li><a class="dropdown-item" href="#">Tecnologia</a></li>
+                        <li><a class="dropdown-item" href="/articoli/Politica">Politica </a></li>
+                        <li><a class="dropdown-item" href="/articoli/Spettacolo">Spettacolo </a></li>
+                        <li><a class="dropdown-item" href="/articoli/Sport">Sport</a></li>
+                        <li><a class="dropdown-item" href="/articoli/Motori">Motori</a></li>
+                        <li><a class="dropdown-item" href="/articoli/Attualità">Attualità</a></li>
+                        <li><a class="dropdown-item" href="/articoli/Tecnologia">Tecnologia</a></li>
                     </ul>
                 </li>
             </ul>
