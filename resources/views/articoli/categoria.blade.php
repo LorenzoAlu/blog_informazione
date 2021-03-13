@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 my-5 text-center">
-            <h1 class="text-white">Articoli per Categoria</h1>
+            <h1 class="text-color-custom">Articoli per Categoria</h1>
             {{-- <p>Sezione:  {{$filtro=>$filtrato['categoria']}} </p> --}}
         </div>
         @foreach ($filtro as $categoria)

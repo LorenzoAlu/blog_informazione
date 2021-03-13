@@ -20,26 +20,26 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('articoli.mostratutti') }}">Esplora</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Random</a>
-                </li>
                 <li class="dropdown nav-item">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                    <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                         data-bs-toggle="dropdown" aria-expanded="false">
                        Categorie
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="articoli.auto">test auto </a></li>
+                        <li><a class="dropdown-item" href="articoli.moto">moto mona</a></li>
+                        <li><a class="dropdown-item" href="#">Politica</a></li>
+                        <li><a class="dropdown-item" href="#">Sport</a></li>
+                        <li><a class="dropdown-item" href="#">Attualità</a></li>
+                        <li><a class="dropdown-item" href="#">Tecnologia</a></li>
                     </ul>
                 </li>
             </ul>
 
 
             <!--   Show this only lg screens and up   -->
-            <a class="navbar-brand d-none d-lg-block me-5" href="#"><img class="logo_navbar" width="100px"
+            <a class="navbar-brand d-none d-lg-block me-5 pe-5" href="#"><img class="logo_navbar" width="100px"
                     alt="logo"></a>
 
 

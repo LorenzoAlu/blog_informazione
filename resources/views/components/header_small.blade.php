@@ -7,7 +7,7 @@
 
         </div> 
         <div class="title_header_small margin-top-custom">
-            <h1>CONTROCULUTA</h1>
+            <h2>CONTROCULUTA</h2>
             <p>Blog d'Informazione</p>
         </div>
     </div>

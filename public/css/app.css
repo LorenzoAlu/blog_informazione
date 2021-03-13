@@ -10738,6 +10738,11 @@ textarea.form-control-lg {
   --strisce: rgba(255, 255, 255, 0.5);
   --colour-black: #1a1a1a;
   --accent-color:#FFC107;
+  --color-text:white ;
+}
+
+.text-color-custom {
+  color: white;
 }
 
 .accent-color {
@@ -10771,6 +10776,7 @@ body {
 /* header */
 .bg-image {
   height: 100vh;
+  background: url(/media/header_1.jpg);
   background-size: cover;
   background-position: center;
   filter: blur(2px);
@@ -10816,6 +10822,7 @@ body {
 /* header small */
 .bg-image_small {
   height: 50vh;
+  background: url(/media/header.jpg);
   background-size: cover;
   background-position: center;
   filter: blur(2px);
@@ -10833,16 +10840,18 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 24;
-  width: 70%;
+  width: 50%;
   padding: 20px;
   text-align: center;
   letter-spacing: 5px;
   color: black;
+  font-size: 10px;
 }
 
 @media screen and (max-width: 512px) {
   .title_header_small {
     letter-spacing: 0px;
+    width: 60%;
   }
 }
 .title_header_small::after {
