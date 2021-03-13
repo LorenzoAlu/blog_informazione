@@ -6,7 +6,7 @@
 
 <div class="container-fluid">
   <div class="row ">
-    <div class="col-12 text-center text-color-custom mb-5"><h2>Ultime Notizie</h2></div>
+    <div class="col-12 text-center text-color-custom my-5"><h2>Ultime Notizie</h2></div>
 @foreach ($ultimi as $ultimo)
 
 <div class="col-12 col-md-4 my-3 d-flex justify-content-center">
