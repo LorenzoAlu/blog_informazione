@@ -3,7 +3,7 @@
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark m-0 p-0 fixed-top">
 
         <!--  Show this only on mobile to medium screens  -->
-        <a class="navbar-brand d-lg-none" href="#"><img class="logo_navbar_small" width="100px" alt="foto logo "></a>
+        <a class="navbar-brand d-lg-none" href="{{ route('home') }}"><img class="logo_navbar_small" width="100px" alt="foto logo "></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle"
             aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,7 +39,7 @@
 
 
             <!--   Show this only lg screens and up   -->
-            <a class="navbar-brand d-none d-lg-block me-5 pe-5" href="#"><img class="logo_navbar" width="100px"
+            <a class="navbar-brand d-none d-lg-block me-5 pe-5" href="{{ route('home') }}"><img class="logo_navbar" width="100px"
                     alt="logo"></a>
 
 

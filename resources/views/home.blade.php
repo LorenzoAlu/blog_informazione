@@ -35,18 +35,18 @@ data="{{$ultimo['data']}}"
             <form method="POST" action="{{route('contacts.send')}}">
                 @csrf
                 <div class="form-group">
-                  <label class="text-color-custom" for="nome">Nome</label>
+                  <label class="text-color-custom py-2" for="nome">Nome</label>
                   <input type="text" name="nome" class="form-control" id="nome">
                 @error('nome')
                 <div class="alert">{{$message}}</div>    
                 @enderror
                 </div>
                 <div class="form-group">
-                  <label class="text-color-custom" for="exampleInputEmail1">Inserisci E-mail</label>
+                  <label class="text-color-custom  py-2" for="exampleInputEmail1">Inserisci E-mail</label>
                   <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                   <small id="emailHelp" class="form-text text-muted"></small>
                 </div>
-                <label class="text-color-custom" for="messaggio">Messaggio</label>
+                <label class="text-color-custom  py-2" for="messaggio">Messaggio</label>
                 <textarea class="form-control" name="messaggio" id="" cols="30" rows="10"></textarea>
                 <button type="submit" class="btn background-accent my-3 w-100">Invia</button>
               </form>   
