@@ -3,18 +3,18 @@
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark m-0 p-0 fixed-top">
 
         <!--  Show this only on mobile to medium screens  -->
-        <a class="navbar-brand d-lg-none" href="{{ route('home') }}"><img class="logo_navbar_small" width="100px " alt="foto logo "></a>
+        <a class="navbar-brand d-lg-none ms-2" href="{{ route('home') }}"><img class="logo_navbar_small" width="100px " alt="foto logo "></a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle"
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle"
             aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon "></span>
         </button>
 
         <!--  Use flexbox utility classes to change how the child elements are justified  -->
         <div class="collapse navbar-collapse justify-content-between" id="navbarToggle">
 
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item ps-2">
                     <a class="nav-link active" href="{{ route('home') }}">Home <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
@@ -39,7 +39,7 @@
 
 
             <!--   Show this only lg screens and up   -->
-            <a class="navbar-brand d-none d-lg-block me-5 pe-5" href="{{ route('home') }}"><img class="logo_navbar me-4 " width="100px"
+            <a class="navbar-brand d-none d-lg-block me-5 pe-5 " href="{{ route('home') }}"><img class="logo_navbar me-4 " width="100px"
                     alt="logo"></a>
 
 
@@ -48,10 +48,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item ps-3">
                     <a class="nav-link" href="#">Iscriviti</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item pe-2">
                     <a class="nav-link" href="#">Accedi</a>
                 </li>
             </ul>
