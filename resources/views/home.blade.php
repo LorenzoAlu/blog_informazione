@@ -36,18 +36,24 @@ data="{{$ultimo['data']}}"
                 @csrf
                 <div class="form-group">
                   <label class="text-color-custom py-2" for="nome">Nome</label>
-                  <input type="text" name="nome" class="form-control" id="nome">
+                  <input type="text" name="nome" class="form-control" id="nome" value="{{old('nome')}}">
                 @error('nome')
-                <div class="alert">{{$message}}</div>    
+                <div class="alert  background-accent d-inline-block my-3 text-dark text-uppercase">{{$message}}</div>    
                 @enderror
                 </div>
                 <div class="form-group">
                   <label class="text-color-custom  py-2" for="exampleInputEmail1">Inserisci E-mail</label>
-                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" value="{{old('email')}}" aria-describedby="emailHelp">
+                  @error('email')
+                  <div class="alert  background-accent d-inline-block my-3 text-dark text-uppercase">{{$message}}</div>    
+                  @enderror
                   <small id="emailHelp" class="form-text text-muted"></small>
                 </div>
                 <label class="text-color-custom  py-2" for="messaggio">Messaggio</label>
-                <textarea class="form-control" name="messaggio" id="" cols="30" rows="10"></textarea>
+                <textarea class="form-control" name="messaggio" id="" cols="30" rows="10">{{old('messaggio')}}</textarea>
+                @error('messaggio')
+                <div class="alert  background-accent d-inline-block my-3 text-dark text-uppercase">{{$message}}</div>    
+                @enderror
                 <button type="submit" class="btn background-accent my-3 w-100">Invia</button>
               </form>   
 
