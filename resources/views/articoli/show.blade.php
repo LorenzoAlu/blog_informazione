@@ -31,7 +31,7 @@
         <div class="col-12  text-center my-5">
             <h2 class="text-color-custom">Articoli Correlati</h2>
         </div>
-            @foreach ($correlati as $correlato)
+            @foreach ($correlatiMenoFirst as $correlato)
 
             <div class="col-12 col-md-4  d-flex justify-content-center my-4">
             <x-card 

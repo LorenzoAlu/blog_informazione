@@ -413,10 +413,14 @@ class HomeController extends Controller
       return $articolo['categoria'] == $filtro['categoria'];
     });
 
-    $correlati->shift();
+    $correlatiMenoFirst= $correlati->filter(function($articolo) use ($filtro){
+      return $articolo !== $filtro;
+    });
+
+    // $correlati->shift();
 
 
-    return view('articoli.show', compact('filtro', 'correlati'));
+    return view('articoli.show', compact('filtro', 'correlatiMenoFirst'));
   }
 
   public function mostraCategoria($categoria)
