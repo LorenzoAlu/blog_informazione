@@ -46,18 +46,18 @@
               nobis quasi. Quisquam cupiditate ex enim.</p>
 
       </div>
-      <div class="col-12  col-md-4 text-black bg-main-color footer-blue">
+      <div class="col-12  col-md-4 text-white bg-main-color footer-blue">
           <div>
-              <h3 class="text-black  ">Social</h3>
+              <h3 class="text-white  ">Social</h3>
           </div>
-          <div class="d-flex justify-content-evenly w-100 text-black ">
+          <div class="d-flex justify-content-evenly w-100 text-white ">
               <i class="fab fa-facebook-f"></i>
               <i class="fab fa-instagram"></i>
               <i class="fab fa-twitter"></i>
               <i class="fab fa-linkedin"></i>
           </div>
           <div>
-              <img class="d-blockmx-auto  img-fluid " src="/media/small_s.png" width="150px"
+              <img class="d-block mx-auto  img-fluid " src="/media/small_s_w.png" width="150px"
                   alt="immagine del logo">
 
           </div>
