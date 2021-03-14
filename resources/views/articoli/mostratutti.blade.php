@@ -6,7 +6,7 @@
 
 <div class="container-fluid ">
     <div class="row ">
-        <div class="col-12 text-center my-3 ">
+        <div class="col-12 text-center my-5 ">
             <h1 class="text-color-custom">
                 Tutti Gli Articoli
             </h1>
