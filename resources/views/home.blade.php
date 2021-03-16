@@ -25,7 +25,6 @@ data="{{$ultimo['data']}}"
 
 
 
-
 <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-12">
@@ -54,11 +53,12 @@ data="{{$ultimo['data']}}"
                 @error('messaggio')
                 <div class="alert  background-accent d-inline-block my-3 text-dark text-uppercase">{{$message}}</div>    
                 @enderror
-                <button type="submit" class="btn background-accent my-3 w-100 text-white">Invia</button>
+                <button type="submit" class="btn background-secondary my-3 w-100 text-white">Invia</button>
               </form>   
 
         </div>
     </div>
 </div>
+
 
 @endsection

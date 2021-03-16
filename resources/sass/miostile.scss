@@ -6,9 +6,10 @@
     --colour-background-folded: #b1193f;
     --strisce: rgba(24, 24, 24, 0.5);
     --colour-black: white;
-    --accent-color:#8d1332;
-    // --accent-color:#FFC107;
-    --color-text:white
+    // --accent-color:#8d1332;
+    --accent-color:#FFC107;
+    --color-text:white;
+    --secondary-color: #8d1332;
   }
 
   .text-color-custom{
@@ -20,7 +21,9 @@
     color: var(--accent-color);
   }
 
-
+  .background-secondary{
+    background-color: var(--secondary-color);
+  }
   
   .background-accent{
 background-color: var(--accent-color);
@@ -49,6 +52,25 @@ background-color: var(--accent-color);
 transition: 1s;
   }
   
+  .accent_hover{
+    transition: 0.5s;
+  }
+
+  .accent_hover:hover{
+    color: var(--accent-color)!important ;
+    transform: scale(1.1);
+  }
+
+  .secondary_hover{
+    transition: 0.5s;
+  }
+
+  .secondary_hover:hover{
+    color: var(--secondary-color)!important ;
+    transform: scale(1.1);
+
+  }
+
 /* header */
 
 header {
@@ -245,7 +267,7 @@ header .overlay {
 @media screen and (max-width:512px){
   .title_header_small{
       letter-spacing: 0px;
-      width: 70%;
+      width: 80%;
 
   }
   
