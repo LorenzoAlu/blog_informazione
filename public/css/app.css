@@ -10788,7 +10788,7 @@ body {
 
 .accent_hover:hover {
   color: var(--accent-color) !important;
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 .secondary_hover {
@@ -10797,7 +10797,7 @@ body {
 
 .secondary_hover:hover {
   color: var(--secondary-color) !important;
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 /* header */

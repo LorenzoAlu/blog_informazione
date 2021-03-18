@@ -49,18 +49,18 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item ">
-                                    <a class="nav-link"  id="nav_link_3" href="{{ route('login') }}">Accedi</a>
+                                    <a class="nav-link ombra"  id="nav_link_3" href="{{ route('login') }}">Accedi</a>
                                 </li>
                             @endif
                             
                             @if (Route::has('register'))
                                 <li class="nav-item pe-2">
-                                    <a class="nav-link"  id="nav_link_4" href="{{ route('register') }}">Registrati</a>
+                                    <a class="nav-link ombra"  id="nav_link_4" href="{{ route('register') }}">Registrati</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown ">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li class="nav-item dropdown pe-5">
+                                <a id="nav_link_5"  class="nav-link dropdown-toggle"   href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
             
