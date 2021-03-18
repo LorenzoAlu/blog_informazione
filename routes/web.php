@@ -2,6 +2,7 @@
 
 
 use App\Mail\ContactMail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
@@ -21,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
 Route::get('/articoli/mostratutti',[HomeController::class, 'mostraTutti'])->name('articoli.mostratutti');

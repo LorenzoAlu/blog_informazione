@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<x-header_small/>
 
 @section('content')
 <div class="container">

@@ -1,9 +1,10 @@
 @extends('layouts.app')
+<x-header_small/>
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 my-5">
             <div class="card">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
@@ -17,7 +18,7 @@
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="form-group row my-3">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -31,9 +32,9 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row mb-0 mb-3">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn background-accent">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>
