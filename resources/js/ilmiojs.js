@@ -29,7 +29,8 @@
 
             navbar.classList.remove("bg-dark","navbar-dark")
             navbar.classList.add("navbar-light","bg-white")
-            logo.src = "/media/small_s.png"
+            logo.src = "/media/small.png"
+            logo.style.width = "90px"
             logo_small.src = "/media/small_s.png"
             link.classList.remove("accent_hover")
             link1.classList.remove("accent_hover")
@@ -48,6 +49,7 @@
             navbar.classList.remove("navbar-light","bg-white")
             navbar.classList.add( "bg-dark","navbar-dark")
             logo.src="/media/small_s_w.png"
+            logo.style.width = "100px"
             logo_small.src = "/media/small_s_w.png"
             link.classList.add("accent_hover")
             link1.classList.add("accent_hover")
