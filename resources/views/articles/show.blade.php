@@ -14,21 +14,20 @@
             <p class="text-center"> Categoria:
             <a href="{{ route('categories.index', $article->category_id)}}">
                 {{ $article->category->name}}
-            </a>
-                
+            </a>   
             </p>
-            <img class="mx-auto d-block my-3 " width="80%" height="70%" src="{{Storage::url($article->img)}}" alt="">
+                <img id="img_show" class="pointer mx-auto d-block my-3 show_img  "  src="{{Storage::url($article->img)}}" alt="">
             <p class="p-4">{{$article->body}}</p>
             <div class="d-flex justify-content-between">
                 <small>Scritto da: {{$article->user->name}}</small>
                 <time>Data Pubblicazione: {{$article->created_at->format('d/m/y')}}</time>
-
             </div>
-         
-            
         </div>
     </div>
 </div>
+
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-12  text-center my-5">

@@ -3,8 +3,9 @@
         const logo_small = document.querySelector('.logo_navbar_small')
         const navbar = document.querySelector('#navbar')
         const link = document.querySelectorAll('.nav-link')
+        const img_show=document.querySelector('#img_show')
         
-        console.log(link.length)
+        let img_opened = false
 
         logo.src = "/media/small_s_w.png"
         logo_small.src = "/media/small_s_w.png"
@@ -45,3 +46,25 @@
 
         }
         })
+
+        if(img_show){
+            img_show.addEventListener('click',()=>{
+                if(img_opened == false){
+
+                    img_show.classList.remove("show_img");
+                    img_show.classList.add("show_img_b");
+
+                    img_opened = !img_opened;
+                }else {
+                    img_show.classList.add("show_img");
+                    img_show.classList.remove("show_img_b");
+
+                    img_opened = !img_opened;
+
+                }
+
+
+
+               
+            })
+        }

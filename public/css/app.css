@@ -11096,6 +11096,30 @@ header .overlay {
   transition: opacity 0.5s ease-in, transform 0.3s ease-in-out 0.25s;
 }
 
+.show_img {
+  max-height: 200px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: 2s;
+}
+
+.show_img_b {
+  max-height: 1000px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: 2s;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 /* footer  */
 .list-item-footer {
   list-style: none;
