@@ -8,6 +8,7 @@
 
         logo.src = "/media/small_s_w.png"
         logo_small.src = "/media/small_s_w.png"
+        navbar.style.height="100px"
         for (let i = 0; i < link.length; i++) {
             link[i].classList.add("accent_hover");
         }
@@ -22,6 +23,7 @@
             navbar.classList.add("navbar-light","bg-white")
             logo.src = "/media/small.png"
             logo.style.width = "90px"
+            navbar.style.height="90px"
             logo_small.src = "/media/small_s.png"
             for (let i = 0; i < link.length; i++) {
                 link[i].classList.remove("accent_hover");
@@ -33,6 +35,7 @@
             navbar.classList.add( "bg-dark","navbar-dark")
             logo.src="/media/small_s_w.png"
             logo.style.width = "100px"
+            navbar.style.height="100px"
             logo_small.src = "/media/small_s_w.png"
             for (let i = 0; i < link.length; i++) {
                 link[i].classList.add("accent_hover");

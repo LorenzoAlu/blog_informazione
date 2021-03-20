@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\article;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -14,7 +16,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles=Article::orderby('id','desc')->get();
+        return view('articles.index',compact('articles'));
     }
 
     /**
@@ -24,7 +27,8 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        $categories=Category::All();
+        return view('articles.create',compact('categories'));
     }
 
     /**
@@ -35,7 +39,17 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $article=Article::create([
+           'title'=>$request->input('title'),
+           'slug'=>$request->input('slug'),
+           'body'=>$request->input('body'),
+           'category_id'=>$request->input('category_id'),
+           'user_id'=>Auth::id(),
+           'img'=>$request->file('img')->store('public'),
+       ]);
+
+       return redirect(route('articles.create'))->with('message',"il tuo articolo $article->title è stato inserito");
+
     }
 
     /**
@@ -46,7 +60,30 @@ class ArticleController extends Controller
      */
     public function show(article $article)
     {
-        //
+        // $filtro = $articoli->filter(function ($articolo) use ($titolo) {
+        //     return $articolo['titolo'] == $titolo;
+        //   })->first();
+      
+        //   $correlati = $articoli->filter(function ($articolo) use ($filtro) {
+        //     return $articolo['categoria'] == $filtro['categoria'];
+        //   });
+      
+        //   $correlatiMenoFirst= $correlati->filter(function($articolo) use ($filtro){
+        //     return $articolo !== $filtro;
+        //   });
+            
+      
+        //   return view('articoli.show', compact('filtro', 'correlatiMenoFirst'));
+
+        $correlati=Article::orderby('id','desc')->get();
+        $related=$correlati->filter(function($correlato) use ($article){
+            return $correlato->category_id==$article->category_id;
+        });
+        $relatedLessFirst=$related->filter(function($relate) use ($article){
+            return $relate !== $article;
+        });
+        return view('articles.show', compact('article','relatedLessFirst'));
+
     }
 
     /**
@@ -57,7 +94,8 @@ class ArticleController extends Controller
      */
     public function edit(article $article)
     {
-        //
+        $categories=Category::all();
+        return view('articles.edit',compact('article','categories'));
     }
 
     /**
@@ -69,7 +107,9 @@ class ArticleController extends Controller
      */
     public function update(Request $request, article $article)
     {
-        //
+        $article->update($request->all());
+        
+        return redirect(route('users.profile'))->with('message',"il tuo Articolo $article->title è stato modificato");
     }
 
     /**
@@ -80,6 +120,7 @@ class ArticleController extends Controller
      */
     public function destroy(article $article)
     {
-        //
+       $article->delete();
+       return redirect()->back()->with('message',"L'articolo $article->title è stato cancellato!");
     }
 }

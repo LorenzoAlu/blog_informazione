@@ -10778,6 +10778,14 @@ body {
   transition: 1s;
 }
 
+.div_logo {
+  z-index: 10000000000000002000000 !important;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  top: 7%;
+  left: 50%;
+}
+
 .logo_navbar {
   transition: 1s;
 }

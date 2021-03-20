@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -12,9 +12,10 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Category $category)
     {
-        //
+        $articles=$category->articles->reverse();
+        return view('categories.index',compact('articles','category'));
     }
 
     /**

@@ -14,6 +14,7 @@
 
   .text-color-custom{
     color:#8d1332;
+   
   }
 
 
@@ -46,14 +47,26 @@ background-color: var(--accent-color);
   }
 
   /* navbar */
+  
+  
 
   #navbar{
     transition: 1s;
   }
 
-  
+  .div_logo{
+    z-index: 9999999999999999999999 !important;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    top: 7%;
+    left: 50%;
+
+  }
+
   .logo_navbar{
 transition: 1s;
+
+
   }
   
   .accent_hover{

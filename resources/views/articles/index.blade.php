@@ -16,10 +16,12 @@
 
         <div class="col-12 col-md-4 my-4 d-flex justify-content-center">
         <x-card 
+        route="{{route('articles.index',$article)}}"
         title="{{$article->title}}"
         slug="{{$article->slug}}"
-        {{-- body="{{substr($article->body,0,10)}}" --}}
-       
+        body="{{substr($article->body,0,12)}}"
+        category="{{$article->category->name}}"
+        date="{{$article->created_at->format('d/m/y')}}"
         />
         </div>
         @endforeach

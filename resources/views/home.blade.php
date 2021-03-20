@@ -7,15 +7,17 @@
 <div class="container-fluid">
   <div class="row ">
     <div class="col-12 text-center text-color-custom my-5"><h2>Ultime Notizie</h2></div>
-@foreach ($ultimi as $ultimo)
+    @foreach ($ultimi as $ultimo)
 
 <div class="col-12 col-md-4 my-3 d-flex justify-content-center">
 <x-card 
-titolo="{{$ultimo['titolo']}}"
-sottotitolo="{{$ultimo['sottotitolo']}}"
-categoria="{{$ultimo['categoria']}}"
-body="{{$ultimo['body']}}"
-data="{{$ultimo['data']}}"
+route="{{route('articles.show',$ultimo)}}"
+title="{{$ultimo->title}}"
+slug="{{$ultimo->slug}}"
+body="{{substr($ultimo->body,0,12)}}"
+category="{{$ultimo->category->name}}"
+date="{{$ultimo->created_at->format('d/m/y')}}"
+
 />
 </div>
 @endforeach
