@@ -11,12 +11,11 @@
                 Tutti Gli Articoli
             </h1>
         </div>
-
         @foreach ($articles as $article)
 
         <div class="col-12 col-md-4 my-4 d-flex justify-content-center">
         <x-card 
-        route="{{route('articles.index',$article)}}"
+        route="{{route('articles.show',$article)}}"
         title="{{$article->title}}"
         slug="{{$article->slug}}"
         body="{{substr($article->body,0,12)}}"

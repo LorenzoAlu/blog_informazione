@@ -79,8 +79,9 @@ class ArticleController extends Controller
         $related=$correlati->filter(function($correlato) use ($article){
             return $correlato->category_id==$article->category_id;
         });
-        $relatedLessFirst=$related->filter(function($relate) use ($article){
-            return $relate !== $article;
+        $filtro=$related->first();
+        $relatedLessFirst=$related->filter(function($relate) use ($filtro){
+            return $relate !== $filtro;
         });
         return view('articles.show', compact('article','relatedLessFirst'));
 

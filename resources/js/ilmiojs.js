@@ -18,7 +18,6 @@
 
         let scrolled = window.pageYOffset
         if (scrolled > 100) {
-            console.log(link)
 
             navbar.classList.remove("bg-dark","navbar-dark")
             navbar.classList.add("navbar-light","bg-white")
