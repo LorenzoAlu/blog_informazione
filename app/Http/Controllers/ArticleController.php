@@ -6,6 +6,7 @@ use App\Models\article;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Mockery\Undefined;
 
 class ArticleController extends Controller
 {
@@ -16,8 +17,11 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles=Article::orderby('id','desc')->get();
-        return view('articles.index',compact('articles'));
+        
+            $articles=Article::orderby('id','desc')->get();
+            return view('articles.index',compact('articles'));
+        
+
     }
 
     /**
@@ -79,9 +83,8 @@ class ArticleController extends Controller
         $related=$correlati->filter(function($correlato) use ($article){
             return $correlato->category_id==$article->category_id;
         });
-        $filtro=$related->first();
-        $relatedLessFirst=$related->filter(function($relate) use ($filtro){
-            return $relate !== $filtro;
+        $relatedLessFirst=$related->filter(function($relate) use ($article){
+            return $relate != $article;
         });
         return view('articles.show', compact('article','relatedLessFirst'));
 

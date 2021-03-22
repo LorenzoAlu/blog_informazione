@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,7 @@ Route::get('/categories/{category}', [CategoryController::class,'index'])->name(
 Route::delete('/articles/{article}/destroy',[ArticleController::class,'destroy'])->name('articles.destroy');
 Route::post('/articles/{article}/update', [ArticleController::class, 'update'])->name('articles.update');
 Route::get('/aboutUs', [HomeController::class,'aboutUs'])->name('aboutUs');
+Route::any('/indexRicerca', [SearchController::class, 'index'])->name('indexRicerca');
 
 
 

@@ -1,6 +1,6 @@
 :root {
     --base-grid: 8px;
-    --colour-body-background: ##E0DDDC;
+    // --colour-body-background: #E0DDDC;
     // --colour-body-background: #8d1332;
     --colour-background: #8d1332;
     --colour-background-folded: #b1193f;
@@ -10,6 +10,9 @@
     --accent-color:#FFC107;
     --color-text:white;
     --secondary-color: #8d1332;
+    --color-headers: #2c3e50;
+  --color-highlight-green: var(--colour-body-background);
+  // --color-light-gray: #cbcccc;
   }
 
   .text-color-custom{
@@ -507,3 +510,164 @@ header .overlay {
       height: 50vh;
       
   }
+
+
+  // carousel 
+  
+.carousel_section {
+  /* make the body full height */
+  position: relative;
+  height: 100vh;
+  display: flex;
+}
+/* position our container in the middle */
+.container {
+  width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+/* style the header */
+
+/*create slider */
+#slider {
+  position: relative;
+  height: 300px;
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.slide {
+  /* we position the slide absolutely compared to its parent #slider */
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  /* change the value for a faster or slower transition between slides */
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+/* class to show the current slide */
+.showing {
+  opacity: 1;
+  z-index: 2;
+}
+.slide-text {
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  padding: 40px;
+  padding-left: 60px;
+  position: relative;
+  box-shadow: 1px 2px 15px 4px rgba(0,0,0,0.10)  ;
+}
+/* create the notch */
+.slide-text:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -20px;
+  left: calc(50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  z-index: 3;
+  border-width: 20px 26px 0 0;
+  border-color: white transparent transparent transparent;
+  box-shadow: -5px 24px 20px -8px rgba(0,0,0,0.22);
+
+
+}
+/* align the testimonial in the center */
+.slide-testimonial {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.slide-img {
+  margin: 10px;
+}
+.slide-img img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid var(--accent-color);
+}
+.slide-person {
+  margin-left: 20px;
+}
+.slide-person p {
+  padding: 5px;
+}
+/* make the name of the person bold */
+.slide-person p:first-of-type {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+/* make their job title light gray */
+.slide-person p:last-of-type {
+  color: var(--color-light-gray);
+}
+/* position the buttons and make them green */
+.slider-button {
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  background-color: var(--accent-color);
+  z-index: 3;
+  position: absolute;
+  text-align: center;
+  border-radius: 20%;
+  -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+/*posion the left an right button horizontally */
+.button-left {
+  position: absolute;
+  left: -10px;
+}
+.button-right {
+  position: absolute;
+  right: -10px;
+}
+
+
+
+
+// barra ricerca 
+.form-control-borderless {
+  border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
