@@ -17,19 +17,32 @@
             </div>
             <div class="mb-3">
                 <label for="img" class="form-label">Immagine Articolo</label>
-                <input type="file" name="img" class="form-control" id="img">
+                <input type="file" name="img[]" class="form-control" id="img" multiple>
             </div>
             <div class="mb-3">
                 <label for="category" class="form-label">Categoria</label>
                     
-                    <select name="category_id" id="category_id" placeholder="ciolla">
+                    <select class="form-select" name="category_id" id="category_id" >
                         @foreach ($categories as $category)
-                        <option value="{{$category->id}}" class="dropdown-item"
-                            {{ $category->id == $article->category->id ? 'selected' : ''}}
-                            > {{$category->name}}</option>
+                        <option value="{{ $category->id }}" 
+                            {{ $category->id == $article->category->id ? 'selected' : '' }}
+                            >{{ $category->name }}</option>
                         @endforeach
                     </select>
 
+            </div>
+            <div class="mb-3">
+                <label for="tag" class="form-label">tags</label>
+
+            
+                <select  class="form-select" name="tag[]" id="tag" multiple>
+                    @foreach ($tags as $tag)
+                    <option value="{{ $tag->id }}" 
+                        {{ $article->tags->contains($tag) ? 'selected' : '' }}
+                        >{{ $tag->name }}</option>                 
+                           @endforeach
+
+                </select>
             </div>
             <div class="mb-3">
                 <label for="body" class="form-label">Scrivi l'articolo</label>

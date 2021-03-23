@@ -16,8 +16,16 @@
                 {{ $article->category->name}}
             </a>   
             </p>
-                <img id="img_show" class="pointer mx-auto d-block my-3 show_img  "  src="{{Storage::url($article->img)}}" alt="">
+                <img id="img_show" class="pointer mx-auto d-block my-3 show_img  "  src="{{$article->getCover()}}" alt="">
             <p class="p-4">{{$article->body}}</p>
+            <div>
+                @if ($article->images!='[]')
+                <h3 class="text-center">Immagini Correlate</h3>
+                @foreach ($article->images as $image)
+                <img id="img_show" class="pointer mx-auto d-inline my-3" width="25%" height="150px" src="{{$article->getCover()}}" alt="">
+                @endforeach
+                @endif               
+            </div>
             <div class="d-flex justify-content-between">
                 <small>Scritto da: {{$article->user->name}}</small>
                 <time>Data Pubblicazione: {{$article->created_at->format('d/m/y')}}</time>

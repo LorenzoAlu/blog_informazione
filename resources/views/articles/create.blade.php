@@ -22,14 +22,24 @@
             </div>
             <div class="mb-3">
                 <label for="img" class="form-label">Immagine Articolo</label>
-                <input type="file" name="img" class="form-control" id="img">
+                <input type="file" name="img[]" class="form-control" id="img" multiple>
             </div>
             <div class="mb-3">
                 <label for="category" class="form-label">Categoria</label>
 
-                <select name="category_id" id="category_id">
+                <select  class="form-select" name="category_id" id="category_id">
                     @foreach ($categories as $category)
-                    <option value="{{$category->id}}">{{$category->name}}</option>
+                    <option  class="" value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="tag" class="form-label">tags</label>
+
+                <select  class="form-select" name="tag[]" id="tag" multiple>
+                    @foreach ($tags as $tag)
+                    <option  class="" value="{{$tag->id}}">{{$tag->name}}</option>
                     @endforeach
 
                 </select>

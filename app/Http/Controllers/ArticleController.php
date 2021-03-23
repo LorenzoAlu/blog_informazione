@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\article;
+use App\Models\Tag;
+use App\Models\Image;
+use Mockery\Undefined;
+use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Mockery\Undefined;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -17,11 +20,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        
             $articles=Article::orderby('id','desc')->get();
             return view('articles.index',compact('articles'));
-        
-
     }
 
     /**
@@ -31,8 +31,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
+        $tags=Tag::All();
         $categories=Category::All();
-        return view('articles.create',compact('categories'));
+        return view('articles.create',compact('categories','tags'));
     }
 
     /**
@@ -49,8 +50,23 @@ class ArticleController extends Controller
            'body'=>$request->input('body'),
            'category_id'=>$request->input('category_id'),
            'user_id'=>Auth::id(),
-           'img'=>$request->file('img')->store('public'),
        ]);
+
+       //per associare i tag da mettere in relazione devo utilizzare un metodo su ogni tag
+       $tags =$request->input('tag');
+       foreach($tags as $tag){
+           $article->tags()->attach($tag);
+       }
+
+       $images=$request->file('img');
+       if($images != null){
+           foreach($images as $image){
+               $i = new Image();
+               $i->url = $image->store("public/articles/$article->id");
+               $i->article_id = $article->id;
+               $i->save();
+           }
+       }
 
        return redirect(route('articles.create'))->with('message',"il tuo articolo $article->title è stato inserito");
 
@@ -124,7 +140,13 @@ class ArticleController extends Controller
      */
     public function destroy(article $article)
     {
+        $tags = $article->tags;
+        foreach($tags as $tag){
+            $article->tags()->detach($tag->id);
+        }
        $article->delete();
        return redirect()->back()->with('message',"L'articolo $article->title è stato cancellato!");
     }
+
+
 }

@@ -15,6 +15,13 @@
 </div>
 <div class="container">
     <div class="row justify-content-center my-5">
+          @if ($user->articles->count()==0)
+          <div class="col-12">
+            <h2> Non Hai Ancora Scritto Articoli</h2>
+          </div>
+          @else
+              
+
         <div class="col-12">
           <h2> I Tuoi Articoli</h2>
         </div>
@@ -38,7 +45,7 @@
                 <tbody>
                     @foreach ($user->articles->reverse() as $article)
                     <tr>
-                      <th scope="row">{{$article->title}}</th>
+                      <th scope="row"><a class="text-dark" href="{{route('articles.show',$article)}}">{{$article->title}}</a></th>
                       <td>{{$article->slug}}</td>
                       <td>{{$article->created_at->format('d/m/y')}}</td>
                       <td>
@@ -60,6 +67,7 @@
         </div>
     </div>
 </div>
+@endif
 
 
 @endsection
