@@ -1,14 +1,15 @@
 <?php
 
-
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\AdminMiddleware;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,16 @@ Route::post('/articles/{article}/update', [ArticleController::class, 'update'])-
 Route::get('/aboutUs', [HomeController::class,'aboutUs'])->name('aboutUs');
 Route::any('/indexRicerca', [SearchController::class, 'index'])->name('indexRicerca');
 
+// Route::get('/admin/{user}/showArticles',[AdminController::class, 'showArticles'])->name('admin.showArticles');
+
+
+Route::middleware([AdminMiddleware::class])->group(function(){
+    
+    Route::get('/admin/dashboard',[AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/articles/{user}', [AdminController::class, 'articlesForUser'])->name('articles.for.user');
+    
+
+});
 
 
 // deprecate 

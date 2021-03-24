@@ -61,32 +61,62 @@
                                 </li>
                             @endif
                         @else
+                             {{-- admin dropdown  --}}
+                             @if (Auth::user()&& Auth::user()->isAdmin())
                             <li class="nav-item dropdown pe-2">
                                 <a id="nav_link_5"  class="nav-link dropdown-toggle"   href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    Admin
                                 </a>
             
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     
-                                         <a class="dropdown-item" href="{{ route('users.profile') }}">
-                                      Profilo
+                                         <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                      Dashboard
                                       </a> 
-                                      <a class="dropdown-item" href="{{ route('articles.create') }}">
-                                        Inserisci Articolo
-                                        </a> 
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                               
-            
+     
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
                                  </li>
+
+                                 @endif
+                                 {{-- utente dropdown  --}}
+                                 <li class="nav-item dropdown pe-2">
+                                    <a id="nav_link_5"  class="nav-link dropdown-toggle"   href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}
+                                    </a>
+                
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        
+                                             <a class="dropdown-item" href="{{ route('users.profile') }}">
+                                          Profilo
+                                          </a> 
+                                          <a class="dropdown-item" href="{{ route('articles.create') }}">
+                                            Inserisci Articolo
+                                            </a> 
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+                                   
+                
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                     </li>
                         @endguest
                     </ul>
         </div>
     </nav>
+
+
+
+    {{-- si potrebbe attaccate  il messaggio alla navbar  --}}
+    {{-- @if (session('message'))
+    <div class="alert alert-success ">
+        {{ session('message') }}
+    </div>
+@endif --}}

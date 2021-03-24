@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
-<x-header/>
 
 @section('content')
-
+<x-header/>
+@if (session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+@endif
 <div class="container-fluid">
   <div class="row ">
     <div class="col-12 text-center text-color-custom my-5"><h2>Ultime Notizie</h2></div>
