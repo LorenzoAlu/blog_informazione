@@ -79,7 +79,7 @@
         route="{{route('articles.show',$article)}}"
         title="{{$article->title}}"
         slug="{{$article->slug}}"
-        body="{{substr($article->body,0,12)}}"
+        body="{{$article->body}}"
         category="{{$article->category->name}}"
         date="{{$article->created_at->format('d/m/y')}}"
         />

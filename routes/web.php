@@ -51,7 +51,10 @@ Route::middleware([AdminMiddleware::class])->group(function(){
     
     Route::get('/admin/dashboard',[AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/articles/{user}', [AdminController::class, 'articlesForUser'])->name('articles.for.user');
-    
+    Route::delete('/users/{user}/destroy', [AdminController::class, 'destroyUser'])->name('user.destroy');
+    Route::get('/user/{user}/toggle', [AdminController::class, 'toggleUser'])->name('user.toggle');
+
+
 
 });
 

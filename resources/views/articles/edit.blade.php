@@ -5,6 +5,11 @@
     <div class="row justify-content-center my-5">
         <div class="col-12">
           <h2> Modifica Articolo</h2>
+          @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
           <form method="POST" action="{{route('articles.update',$article)}}" enctype="multipart/form-data">
               @csrf
             <div class="mb-3">

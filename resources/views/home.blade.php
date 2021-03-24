@@ -18,7 +18,7 @@
 route="{{route('articles.show',$ultimo)}}"
 title="{{$ultimo->title}}"
 slug="{{$ultimo->slug}}"
-body="{{substr($ultimo->body,0,12)}}"
+body="{{$ultimo->body}}"
 category="{{$ultimo->category->name}}"
 date="{{$ultimo->created_at->format('d/m/y')}}"
 

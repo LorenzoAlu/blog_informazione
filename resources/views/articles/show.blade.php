@@ -26,10 +26,17 @@
                 @endforeach
                 @endif               
             </div>
+            <div class="my-3">
+                <strong>Tags: </strong>
+                @foreach ($article->tags as $tag)
+                <small>#{{$tag->name}} </small>
+                @endforeach
+            </div>
             <div class="d-flex justify-content-between">
                 <small>Scritto da: {{$article->user->name}}</small>
                 <time>Data Pubblicazione: {{$article->created_at->format('d/m/y')}}</time>
             </div>
+
         </div>
     </div>
 </div>
@@ -48,7 +55,7 @@
             route="{{route('articles.show',$relatedLess)}}"
             title="{{$relatedLess->title}}"
             slug="{{$relatedLess->slug}}"
-            body="{{substr($relatedLess->body,0,12)}}"
+            body="{{$relatedLess->body}}"
             category="{{$relatedLess->category->name}}"
             date="{{$relatedLess->created_at->format('d/m/y')}}"
             

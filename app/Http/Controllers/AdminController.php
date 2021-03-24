@@ -20,6 +20,19 @@ class AdminController extends Controller
         return view('admin.user-articles', compact('articles', 'user'));
     }
 
+    public function destroyUser(User $user)
+    {
+        $user->delete();
 
+        return redirect()->back()->with('message',"L'utente $user->name è stato eliminato");
+    }
+
+    public function toggleUser(User $user)
+    {
+        $user->disable = !$user->disable;
+        $user->save();
+
+        return redirect()->back();
+    }
    
 }

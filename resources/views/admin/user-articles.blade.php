@@ -23,7 +23,7 @@
                 <tbody>
                     @foreach ($articles as $article)
                     <tr>
-                      <th scope="row">{{$article->title}}</th>
+                      <th scope="row"><a class="text-dark" href="{{route('articles.show',$article)}}">{{$article->title}}</a></th>
                       <td>{{$article->slug}}</td>
                       <td>{{$article->created_at->format('d/m/Y')}}</td>
                       <td>

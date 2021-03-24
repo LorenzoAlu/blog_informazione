@@ -44,6 +44,10 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+        if(Auth::user()->disable == 1){
+            return redirect()->back()->with('message',"Utente disabilitato! Non puoi creare nessun articolo!");
+        }
+
        $article=Article::create([
            'title'=>$request->input('title'),
            'slug'=>$request->input('slug'),
@@ -114,6 +118,10 @@ class ArticleController extends Controller
      */
     public function edit(article $article)
     {
+        if(Auth::user()->disable == 1){
+            return redirect()->back()->with('message',"Utente disabilitato! Non puoi modificare i tuoi articoli!");
+        }
+
         $categories=Category::all();
         return view('articles.edit',compact('article','categories'));
     }
