@@ -4,29 +4,35 @@
 
 @section('content')
 
-<div class="container">
+<div class="container-fluid">
 	<div class="row justify-content-center">
                         <div class="col-12 col-md-10 col-lg-8">
                             <form action="{{route('indexRicerca')}}" method="POST" class="card card-sm">
                                     @csrf
                                 <div class="card-body row no-gutters align-items-center">
                                    
-                                    <div class="col-auto">
-                                        <input name="searchWord" class="form-control form-control-lg form-control-borderless" type="text" placeholder="Cerca Articolo">
+                                    <div class="col">
+                                        <input name="searchWord" class="form-control form-control-lg form-control-borderless" type="text" placeholder="Cerca Articolo" value="{{$request->input('searchWord')}}">
                                     </div>
                                     <div class="col">
                                         <label for="category_id" class="form-label">categoria</label>
                                             <select name="category_id" id="category_id" >
-
                                                 @if ( $articlesFilter->count()==0 ){
+                                                    <option value="0" >Tutte le categorie</option>
                                                     @foreach ($categories as $category)
                                                     <option value="{{$category->id}}" class="dropdown-item"
                                                         {{ $category->id == $request->category_id ? 'selected' : ''}}
                                                         > {{$category->name}}</option>
                                                         @endforeach
-    
                                                 }
                                                 @else{
+                                                @if ($request->category_id==0)
+                                                <option value="0" selected>Tutte le categorie</option>
+                                                @foreach ($categories as $category)
+                                                <option value="{{$category->id}}" class="dropdown-item"> {{$category->name}}</option>
+                                                @endforeach
+                                                @else 
+                                                <option value="0" >Tutte le categorie</option>
                                                 @foreach ($categories as $category)
                                                 <option value="{{$category->id}}" class="dropdown-item"
                                                     {{ $category->id == $articlesFilter->first()->category->id ? 'selected' : ''}}
@@ -35,13 +41,14 @@
                                                 @endforeach
                                                 }
                                                 @endif
+                                                @endif
 
 
 
                                             </select>
                         
                                     </div>
-                                    <div class="col-auto">
+                                    <div class="col">
                                         <button class="btn btn-lg background-accent text-white" type="submit">Search</button>
                                     </div>
                                     <!--end of col-->

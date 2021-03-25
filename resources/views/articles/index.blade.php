@@ -10,14 +10,14 @@
                             <form action="{{route('indexRicerca')}}" method="POST" class="card card-sm">
                                     @csrf
                                 <div class="card-body row no-gutters align-items-center">
-                                    
                                     <div class="col">
-                                        <input name="searchWord" class="form-control form-control-lg form-control-borderless" type="text" placeholder="Cerca Articolo">
+                                        <input name="searchWord" class="form-control form-control-lg form-control-borderless" type="text" placeholder="Cerca Articolo" >
                                     </div>
                                     <div class="col">
                                         <label for="category" class="form-label">Categoria</label>
                         
                                         <select name="category_id" id="category_id">
+                                            <option value="0">Tutte le categorie</option>
                                             @foreach ($categories as $category)
                                             <option value="{{$category->id}}">{{$category->name}}</option>
                                             @endforeach
@@ -43,8 +43,12 @@
                 Tutti Gli Articoli
             </h1>
         </div>
-        @foreach ($articles as $article)
+        @if (count($articles)==0)
 
+            <h2 class="text-center">Nessun Risultato
+            </h2>
+        @else    
+        @foreach ($articles as $article)
         <div class="col-12 col-md-4 my-4 d-flex justify-content-center">
         <x-card 
         route="{{route('articles.show',$article)}}"
@@ -56,6 +60,7 @@
         />
         </div>
         @endforeach
+        @endif
         
 
     </div>
