@@ -8,7 +8,7 @@
 {{-- carousel --}}
 <section class="carousel_section container-fluid">
     
-    <div class="container">
+    <div class="container-carousel">
         <div class="row">
           <h1 class="text-center text-white">Dicono Di Noi</h1>
           <div id="slider">

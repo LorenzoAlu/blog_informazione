@@ -1,6 +1,5 @@
     <!-- navbar -->
-
-
+    {{-- logo --}}
     <div class=" justify-content-center div_logo d-flex"> <!--   Show this only lg screens and up   -->
         <a class="navbar-brand d-none d-lg-block  mx-auto img-fluid " href="{{ route('home') }}"><img class="logo_navbar " width="100px"
                 alt="logo"></a>

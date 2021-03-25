@@ -9,8 +9,7 @@ class SearchController extends Controller
 {
     public function index(Request $request)
     {
-
-
+      
         $filterCategories = $request->input('category_id');
         $search = $request->input('searchWord');
 
@@ -19,24 +18,26 @@ class SearchController extends Controller
                 ->orWhere('slug', 'LIKE', "%{$search}%")
                 ->orWhere('body', 'LIKE', "%{$search}%")
                 ->get();
+                // ->paginate(9)
             return view('articles.index', compact('articles'));
         } elseif ($filterCategories == 0) {
             $articles = Article::query()->where('title', 'LIKE', "%{$search}%")
                 ->orWhere('slug', 'LIKE', "%{$search}%")
                 ->orWhere('body', 'LIKE', "%{$search}%")
                 ->get();
+                // ->paginate(9)
             return view('articles.index', compact('articles'));
         } else {
-            $articles = Article::query()->where('title', 'LIKE', "%{$search}%")
+            $articlesFilter = Article::query()->where('title', 'LIKE', "%{$search}%")
                 ->orWhere('slug', 'LIKE', "%{$search}%")
                 ->orWhere('body', 'LIKE', "%{$search}%")
                 ->get();
 
-            $articlesFilter = $articles->filter(function ($article) use ($filterCategories) {
+            $articles = $articlesFilter->filter(function ($article) use ($filterCategories) {
                 return $article->category_id == $filterCategories;
             });
-
-            return view('indexRicerca', compact('articlesFilter', 'search', 'request'));
+            // ->paginate(9)
+            return view('indexRicerca', compact('articles', 'search', 'request'));
         }
     }
 }

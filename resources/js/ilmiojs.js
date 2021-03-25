@@ -25,10 +25,14 @@
             logo.style.width = "90px"
             navbar.style.height="90px"
             logo_small.src = "/media/small_s.png"
-            for (let i = 0; i < link.length; i++) {
-                link[i].classList.remove("accent_hover");
-                link[i].classList.add("secondary_hover");
-            }
+            // for (let i = 0; i < link.length; i++) {
+            //     link[i].classList.remove("accent_hover");
+            //     link[i].classList.add("secondary_hover");
+            // }
+            link.forEach( el => {
+                el.classList.remove("accent_hover");
+                el.classList.add("secondary_hover");
+            })
 
         } else {
             navbar.classList.remove("navbar-light","bg-white")
@@ -37,11 +41,14 @@
             logo.style.width = "100px"
             navbar.style.height="100px"
             logo_small.src = "/media/small_s_w.png"
-            for (let i = 0; i < link.length; i++) {
-                link[i].classList.add("accent_hover");
-                link[i].classList.remove("secondary_hover");
-            }
-
+            // for (let i = 0; i < link.length; i++) {
+            //     link[i].classList.add("accent_hover");
+            //     link[i].classList.remove("secondary_hover");
+            // }
+            link.forEach( el => {
+               el.classList.add("accent_hover");
+               el.classList.remove("secondary_hover");
+            })
 
         }
         })
