@@ -35,15 +35,13 @@ class Article extends Model
         return $this->hasMany(Image::class);
     }
 
-    
     public function getCover()
     {
         $img=$this->images->first();
         if($img==null){
             return '/default/default.jpg';
         }else{
-            return Storage::url($img->url);
-            
+            return Storage::url($img->url);    
         }
     } 
 }

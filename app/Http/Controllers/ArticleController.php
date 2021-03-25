@@ -20,7 +20,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-            $articles=Article::orderby('id','desc')->get()->paginate(9);
+            $articles=Article::orderby('id','desc')->get();
+            // ->paginate(9)
             return view('articles.index',compact('articles'));
     }
 
@@ -84,21 +85,7 @@ class ArticleController extends Controller
      */
     public function show(article $article)
     {
-        // $filtro = $articoli->filter(function ($articolo) use ($titolo) {
-        //     return $articolo['titolo'] == $titolo;
-        //   })->first();
       
-        //   $correlati = $articoli->filter(function ($articolo) use ($filtro) {
-        //     return $articolo['categoria'] == $filtro['categoria'];
-        //   });
-      
-        //   $correlatiMenoFirst= $correlati->filter(function($articolo) use ($filtro){
-        //     return $articolo !== $filtro;
-        //   });
-            
-      
-        //   return view('articoli.show', compact('filtro', 'correlatiMenoFirst'));
-
         $correlati=Article::orderby('id','desc')->get();
         $related=$correlati->filter(function($correlato) use ($article){
             return $correlato->category_id==$article->category_id;

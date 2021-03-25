@@ -30,7 +30,8 @@
                                     @if ($request->category_id == 0)
                                         <option value="0" selected>Tutte le categorie</option>
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}" class="dropdown-item"> {{ $category->name }}
+                                            <option value="{{ $category->id }}" class="dropdown-item">
+                                                {{ $category->name }}
                                             </option>
                                         @endforeach
                                     @else
@@ -44,11 +45,7 @@
                                         }
                                     @endif
                                 @endif
-
-
-
                             </select>
-
                         </div>
                         <div class="col">
                             <button class="btn btn-lg background-accent text-white" type="submit">Search</button>
@@ -61,12 +58,9 @@
         </div>
     </div>
 
-
-
     <div class="container-fluid ">
         <div class="row ">
             <div class="col-12 text-center my-5 ">
-
                 <h1 class="text-color-custom">
                     Ricerca Per Parola Chiave: {{ $search }}
                 </h1>
@@ -79,23 +73,17 @@
                     <h1 class="text-color-custom">
                         Categoria: {{ $articles->first()->category->name }}
                     </h1>
-                </div>
-                @foreach ($articles as $article)
-                
+            </div>
+            @foreach ($articles as $article)
                 <div class="col-12 col-md-4 my-4 d-flex justify-content-center">
                     <x-card route="{{ route('articles.show', $article) }}" title="{{ $article->title }}"
-                        slug="{{ $article->slug }}" body="{{ $article->body }}" category="{{ $article->category->name }}"
+                        slug="{{ $article->slug }}" body="{{ $article->body }}"
+                        category="{{ $article->category->name }}"
                         date="{{ $article->created_at->format('d/m/y') }}" />
-                    </div>
-                    @endforeach
-                    {{ $articles->links() }}
-                    @endif
-
-
+                </div>
+            @endforeach
+            {{-- {{ $articles->links() }} --}}
+            @endif
         </div>
     </div>
-
-
-
-
 @endsection

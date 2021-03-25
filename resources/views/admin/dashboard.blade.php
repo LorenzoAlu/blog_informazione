@@ -47,9 +47,9 @@
                                 <td>{{ $user->created_at->format('d/m/Y') }}</td>
                                 <td>
                                     @if ($user->disable == false)
-                                      <a href="{{route('user.toggle',$user)}}" class="btn btn-warning">Disabilità</a>
+                                        <a href="{{ route('user.toggle', $user) }}" class="btn btn-warning">Disabilità</a>
                                     @else
-                                      <a  href="{{route('user.toggle',$user)}}" class="btn btn-primary">Abilita</a>
+                                        <a href="{{ route('user.toggle', $user) }}" class="btn btn-primary">Abilita</a>
                                     @endif
                                 </td>
                                 <td>

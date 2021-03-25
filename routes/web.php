@@ -59,7 +59,3 @@ Route::middleware([AdminMiddleware::class])->group(function(){
 });
 
 
-// deprecate 
-// Route::get('/articoli/{articolo}/show',[HomeController::class, 'show'])->name('articoli.show');
-// Route::get('/articoli/mostratutti',[HomeController::class, 'mostraTutti'])->name('articoli.mostratutti');
-// Route::get('/articoli/{categoria}',[HomeController::class, 'mostraCategoria'])->name('articoli.categoria');

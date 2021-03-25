@@ -31,12 +31,6 @@ class CreateTagsTable extends Migration
         };
     }
 
-  
-
-
-
-
-
     /**
      * Reverse the migrations.
      *
