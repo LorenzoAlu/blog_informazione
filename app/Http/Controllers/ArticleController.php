@@ -20,8 +20,11 @@ class ArticleController extends Controller
      */
     public function index()
     {
-            $articles=Article::orderby('id','desc')->get();
+            $allArticles=Article::orderby('id','desc')->get();
             // ->paginate(9)
+            $articles=$allArticles->filter(function($article){
+                return $article->visible==true;
+            });
             return view('articles.index',compact('articles'));
     }
 
@@ -48,21 +51,19 @@ class ArticleController extends Controller
         if(Auth::user()->disable == 1){
             return redirect()->back()->with('message',"Utente disabilitato! Non puoi creare nessun articolo!");
         }
-
        $article=Article::create([
            'title'=>$request->input('title'),
            'slug'=>$request->input('slug'),
            'body'=>$request->input('body'),
            'category_id'=>$request->input('category_id'),
            'user_id'=>Auth::id(),
+           'visible'=>false,
        ]);
-
        //per associare i tag da mettere in relazione devo utilizzare un metodo su ogni tag
        $tags =$request->input('tag');
        foreach($tags as $tag){
            $article->tags()->attach($tag);
        }
-
        $images=$request->file('img');
        if($images != null){
            foreach($images as $image){
@@ -73,6 +74,7 @@ class ArticleController extends Controller
            }
        }
 
+       
        return redirect(route('articles.create'))->with('message',"il tuo articolo $article->title è stato inserito");
 
     }
@@ -93,7 +95,10 @@ class ArticleController extends Controller
         $relatedLessFirst=$related->filter(function($relate) use ($article){
             return $relate != $article;
         });
-        return view('articles.show', compact('article','relatedLessFirst'));
+        $relatedLessFalse =$relatedLessFirst->filter(function($article){
+            return $article->visible==true;
+        });
+        return view('articles.show', compact('article','relatedLessFalse'));
 
     }
 

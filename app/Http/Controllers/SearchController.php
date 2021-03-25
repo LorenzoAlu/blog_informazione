@@ -14,18 +14,24 @@ class SearchController extends Controller
         $search = $request->input('searchWord');
 
         if ($filterCategories == 0 && $search == null) {
-            $articles = Article::query()->where('title', 'LIKE', "%{$search}%")
+            $articlesfilter = Article::query()->where('title', 'LIKE', "%{$search}%")
                 ->orWhere('slug', 'LIKE', "%{$search}%")
                 ->orWhere('body', 'LIKE', "%{$search}%")
                 ->get();
+            $articles=$articlesfilter->filter(function($article){
+                return $article->visible == true;
+            })->reverse();
                 // ->paginate(9)
             return view('articles.index', compact('articles'));
         } elseif ($filterCategories == 0) {
-            $articles = Article::query()->where('title', 'LIKE', "%{$search}%")
+            $articlesfilter = Article::query()->where('title', 'LIKE', "%{$search}%")
                 ->orWhere('slug', 'LIKE', "%{$search}%")
                 ->orWhere('body', 'LIKE', "%{$search}%")
                 ->get();
                 // ->paginate(9)
+                $articles=$articlesfilter->filter(function($article){
+                    return $article->visible == true;
+                })->reverse();
             return view('articles.index', compact('articles'));
         } else {
             $articlesFilter = Article::query()->where('title', 'LIKE', "%{$search}%")
@@ -33,9 +39,12 @@ class SearchController extends Controller
                 ->orWhere('body', 'LIKE', "%{$search}%")
                 ->get();
 
-            $articles = $articlesFilter->filter(function ($article) use ($filterCategories) {
+            $articlesCategory = $articlesFilter->filter(function ($article) use ($filterCategories) {
                 return $article->category_id == $filterCategories;
             });
+            $articles=$articlesCategory->filter(function($article){
+                return $article->visible == true;
+            })->reverse();
             // ->paginate(9)
             return view('indexRicerca', compact('articles', 'search', 'request'));
         }

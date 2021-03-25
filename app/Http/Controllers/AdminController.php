@@ -34,5 +34,22 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
+
+    public function revisionate(){
+        
+        $articles=Article::orderBy('id','desc')->get();
+        $newArticles=$articles->filter(function($article){
+            return $article->visible == false;
+        });
+        return view('admin.revisionate', compact('newArticles'));
+    }
+
+    public function approved(Article $article)
+    {
+       
+        $article->visible = !$article->visible;
+        $article->save();
+        return redirect()->back()->with('message',"l'articolo $article->title è stato approvato");
+    }
    
 }

@@ -69,7 +69,9 @@
                                 <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
                                     Dashboard
                                 </a>
-
+                                <a class="dropdown-item" href="{{ route('admin.revisionate') }}">
+                                    Revisione Articoli
+                                </a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,14 @@ class CategoryController extends Controller
      */
     public function index(Category $category)
     {
-        $articles=$category->articles->reverse();
+        $allArticles=Article::all();
+        $filterCategory=$allArticles->filter(function($article){
+             return $article->visible==true;
+        });
+        $articles=$filterCategory->filter(function($article) use($category){
+                return $article->category == $category;
+        })->reverse();
+
         return view('categories.index',compact('articles','category'));
     }
 

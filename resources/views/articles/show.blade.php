@@ -49,13 +49,13 @@
             <div class="col-12  text-center my-5">
                 <h2 class="text-color-custom">Articoli Correlati</h2>
             </div>
-            @foreach ($relatedLessFirst as $relatedLess)
+            @foreach ($relatedLessFalse as $article)
 
                 <div class="col-12 col-md-4  d-flex justify-content-center my-4">
-                    <x-card route="{{ route('articles.show', $relatedLess) }}" title="{{ $relatedLess->title }}"
-                        slug="{{ $relatedLess->slug }}" body="{{ $relatedLess->body }}"
-                        category="{{ $relatedLess->category->name }}"
-                        date="{{ $relatedLess->created_at->format('d/m/y') }}" />
+                    <x-card route="{{ route('articles.show', $article) }}" title="{{ $article->title }}"
+                        slug="{{ $article->slug }}" body="{{ $article->body }}"
+                        category="{{ $article->category->name }}"
+                        date="{{ $article->created_at->format('d/m/y') }}" />
                 </div>
             @endforeach
         </div>
