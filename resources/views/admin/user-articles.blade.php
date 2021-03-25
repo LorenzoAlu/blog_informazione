@@ -28,8 +28,11 @@
                                     <td>{{ $article->slug }}</td>
                                     <td>{{ $article->created_at->format('d/m/Y') }}</td>
                                     <td>
-                                        <a href="" class="btn btn-danger">Elimina</a>
-
+                                        <form method="POST" action="{{route('articles.destroy',$article)}}">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger">Elimina</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
