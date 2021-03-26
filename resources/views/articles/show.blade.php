@@ -54,18 +54,33 @@
             </div>
                 @foreach ($article->comments as $comment)
                     <div class="col-12 col-md-10 bg-white shadow rounded-3 my-3 p-5">
-                        <div>
+                        <div id="commentWrapper" class="d-block">
                             <p>{{ $comment->body }}</p>
+                        </div>
+                        <div id="commentWrapperNew" class="d-none">
+                            <form action="{{ route('comments.update', $comment) }}" method="POST">
+                                @csrf
+                                <div>
+                                    <label class="form-label my-3" for="comment">Modifica commenta</label>
+                                    <textarea class="form-control" name="body" id="comment" cols="20" rows="5">{{ $comment->body }}
+                                    </textarea>
+                                </div>
+                                <div class="my-3">
+                                    <button type="submit" class="btn background-accent w-100">Modifica</button>
+                                </div>
+                            </form>
                         </div>
                         <div class="d-flex justify-content-between">
                             <small>Commento di:{{ $comment->user->name }}</small>
                             <small>Creato il :{{ $comment->created_at->format('d/m/Y') }}</small>
                         </div>
-                        @if($comment->user->id==Auth::id() || Auth::user()->isAdmin())
+                        @if($comment->user->id==Auth::id()) 
                         <div class="my-3 d-flex justify-content-between">
-                            <button class="btn background-accent">
+                            <button id="ModifyComment" class="btn background-accent">
                                 Modifica
                             </button>
+                        @endif
+                        @if($comment->user->id==Auth::id() || Auth::user()->isAdmin())
                             <form action="{{route('comments.destroy',$comment)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -108,7 +123,7 @@
         </div>
     </div>
 
-
+{{-- articoli correlati  --}}
     <div class="container-fluid">
         <div class="row">
             <div class="col-12  text-center my-5">

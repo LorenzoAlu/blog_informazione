@@ -4,7 +4,10 @@ const logo_small = document.querySelector('.logo_navbar_small')
 const navbar = document.querySelector('#navbar')
 const link = document.querySelectorAll('.nav-link')
 const img_show = document.querySelector('#img_show')
-
+const modifyComment = document.querySelector('#ModifyComment')
+const attualComment = document.querySelector('#commentWrapper')
+const NewComment = document.querySelector('#commentWrapperNew')
+let comment_opened = false
 let img_opened = false
 
 logo.src = "/media/small_s_w.png"
@@ -73,4 +76,24 @@ if (img_show) {
 
 
     })
+
+    if(ModifyComment){
+        ModifyComment.addEventListener('click',()=>{
+            if (comment_opened == false) {
+                NewComment.classList.add("d-block");
+                NewComment.classList.remove("d-none");
+                attualComment.classList.add("d-none");
+                attualComment.classList.remove("d-block");
+                comment_opened=!comment_opened
+            } else {
+                NewComment.classList.add("d-none");
+                NewComment.classList.remove("d-block");
+                attualComment.classList.add("d-block");
+                attualComment.classList.remove("d-none");
+                comment_opened=!comment_opened
+
+            }
+
+        })
+    }
 }

@@ -46,6 +46,7 @@ Route::get('/aboutUs', [HomeController::class,'aboutUs'])->name('aboutUs');
 Route::any('/indexRicerca', [SearchController::class, 'index'])->name('indexRicerca');
 Route::post('/comments/{article}/store', [CommentController::class,'store'])->name('comments.store');
 Route::delete('/comments/{comment}/destroy', [CommentController::class,'destroy'])->name('comments.destroy');
+Route::post('/comments/{comment}/update', [CommentController::class,'update'])->name('comments.update');
 
 // Route::get('/admin/{user}/showArticles',[AdminController::class, 'showArticles'])->name('admin.showArticles');
 
