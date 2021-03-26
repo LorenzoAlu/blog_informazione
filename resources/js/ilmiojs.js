@@ -4,9 +4,10 @@ const logo_small = document.querySelector('.logo_navbar_small')
 const navbar = document.querySelector('#navbar')
 const link = document.querySelectorAll('.nav-link')
 const img_show = document.querySelector('#img_show')
-const modifyComment = document.querySelector('#ModifyComment')
-const attualComment = document.querySelector('#commentWrapper')
-const NewComment = document.querySelector('#commentWrapperNew')
+const modifyComment = document.querySelectorAll('#ModifyComment')
+const attualComment = document.querySelectorAll('#commentWrapper')
+const NewComment = document.querySelectorAll('#commentWrapperNew')
+
 let comment_opened = false
 let img_opened = false
 
@@ -77,23 +78,66 @@ if (img_show) {
 
     })
 
-    if(ModifyComment){
-        ModifyComment.addEventListener('click',()=>{
-            if (comment_opened == false) {
-                NewComment.classList.add("d-block");
-                NewComment.classList.remove("d-none");
-                attualComment.classList.add("d-none");
-                attualComment.classList.remove("d-block");
-                comment_opened=!comment_opened
-            } else {
-                NewComment.classList.add("d-none");
-                NewComment.classList.remove("d-block");
-                attualComment.classList.add("d-block");
-                attualComment.classList.remove("d-none");
-                comment_opened=!comment_opened
-
-            }
-
-        })
-    }
 }
+
+modifyComment.forEach((element,i)  => {
+    element.addEventListener('click',()=>{
+        if (comment_opened == false) {
+                          
+                            NewComment[i].classList.add("d-block");
+                            NewComment[i].classList.remove("d-none");
+                            attualComment[i].classList.add("d-none");
+                            attualComment[i].classList.remove("d-block");
+                            comment_opened=!comment_opened
+
+                        } else {
+
+                            NewComment[i].classList.add("d-none");
+                            NewComment[i].classList.remove("d-block");
+                            attualComment[i].classList.add("d-block");
+                            attualComment[i].classList.remove("d-none");
+                            comment_opened=!comment_opened
+            
+                        }
+    })
+});
+
+// if(ModifyComment){
+//     ModifyComment.forEach(el => {
+//         el.addEventListener('click',()=>{
+//             if (comment_opened == false) {
+//                 NewComment.forEach(el => {
+//                     el.classList.add("d-block");
+//                     el.classList.remove("d-none");
+//                 });
+//                 attualComment.forEach(el => {
+//                     el.classList.add("d-none");
+//                     el.classList.remove("d-block");
+//                 });
+//                 // NewComment.classList.add("d-block");
+//                 // NewComment.classList.remove("d-none");
+//                 // attualComment.classList.add("d-none");
+//                 // attualComment.classList.remove("d-block");
+//                 comment_opened=!comment_opened
+//             } else {
+
+//                 NewComment.forEach(el => {
+//                     el.classList.add("d-none");
+//                     el.classList.remove("d-block");
+//                 });
+//                 attualComment.forEach(el => {
+//                     el.classList.add("d-block");
+//                     el.classList.remove("d-none");
+//                 });
+//                 // NewComment.classList.add("d-none");
+//                 // NewComment.classList.remove("d-block");
+//                 // attualComment.classList.add("d-block");
+//                 // attualComment.classList.remove("d-none");
+//                 comment_opened=!comment_opened
+
+//             }
+
+//         })
+//     });
+
+// }
