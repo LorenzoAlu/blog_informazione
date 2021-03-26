@@ -10,6 +10,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,8 @@ Route::delete('/articles/{article}/destroy',[ArticleController::class,'destroy']
 Route::post('/articles/{article}/update', [ArticleController::class, 'update'])->name('articles.update');
 Route::get('/aboutUs', [HomeController::class,'aboutUs'])->name('aboutUs');
 Route::any('/indexRicerca', [SearchController::class, 'index'])->name('indexRicerca');
+Route::post('/comments/{article}/store', [CommentController::class,'store'])->name('comments.store');
+Route::delete('/comments/{comment}/destroy', [CommentController::class,'destroy'])->name('comments.destroy');
 
 // Route::get('/admin/{user}/showArticles',[AdminController::class, 'showArticles'])->name('admin.showArticles');
 

@@ -16,7 +16,8 @@
                         {{ $article->category->name }}
                     </a>
                 </p>
-                <img id="img_show" class="pointer mx-auto d-block my-3 show_img  " src="{{ $article->getCover() }}" alt="">
+                <img id="img_show" class="pointer mx-auto d-block my-3 show_img  " src="{{ $article->getCover() }}"
+                    alt="">
                 <p class="p-4">{{ $article->body }}</p>
                 <div>
                     @if ($article->images != '[]')
@@ -42,6 +43,70 @@
         </div>
     </div>
 
+    {{-- commenti inseriti --}}
+    <div class="container-fluid">
+        <div class="row justify-content-center ">
+            @if (count($article->comments) == 0)
+
+            @else
+            <div class="col-12 text-center">
+                <h2>Commenti</h2>
+            </div>
+                @foreach ($article->comments as $comment)
+                    <div class="col-12 col-md-10 bg-white shadow rounded-3 my-3 p-5">
+                        <div>
+                            <p>{{ $comment->body }}</p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <small>Commento di:{{ $comment->user->name }}</small>
+                            <small>Creato il :{{ $comment->created_at->format('d/m/Y') }}</small>
+                        </div>
+                        @if($comment->user->id==Auth::id() || Auth::user()->isAdmin())
+                        <div class="my-3 d-flex justify-content-between">
+                            <button class="btn background-accent">
+                                Modifica
+                            </button>
+                            <form action="{{route('comments.destroy',$comment)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                            <button type="submit" class="btn bg-danger">
+                                Elimina
+                             </button>
+                            </form>
+                        </div>
+                        @endif
+                    </div>
+                @endforeach
+            @endif
+
+        </div>
+    </div>
+
+    {{-- sezione commenti --}}
+    @if (session('message'))
+        <div class="alert alert-success ">
+            {{ session('message') }}
+        </div>
+    @endif
+    <div class="container-fluid my-3">
+        <div class="row justify-content-center ">
+            <div class="col-12 text-center my-4">
+                <h2>Commenta Notizia</h2>
+            </div>
+            <div class="col-12 col-md-8 bg-white shadow-lg rounded-3">
+                <form action="{{ route('comments.store', $article) }}" method="POST">
+                    @csrf
+                    <div>
+                        <label class="form-label my-3" for="comment">Commenta</label>
+                        <textarea class="form-control" name="body" id="comment" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="my-3">
+                        <button type="submit" class="btn background-accent w-100">Invia</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
     <div class="container-fluid">

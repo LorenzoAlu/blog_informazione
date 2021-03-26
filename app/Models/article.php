@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Tag;
 use App\Models\User;
 use App\Models\Image;
+use App\Models\Comment;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -33,6 +34,11 @@ class Article extends Model
 
     public function images(){
         return $this->hasMany(Image::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 
     public function getCover()
