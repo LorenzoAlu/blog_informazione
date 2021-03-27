@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tag;
+use App\Models\User;
 use App\Models\Image;
 use Mockery\Undefined;
 use App\Models\Article;
@@ -150,17 +151,28 @@ class ArticleController extends Controller
 
     public function addLiked(Article $article)
     {
-        $article->like = ($article->like)+1;
-        $article->save();
+        if(auth::user()->likearticle == false){  
+            $article->like = ($article->like)+1;
+            $article->save();
+            auth::user()->likearticle = !auth::user()->likearticle;
+            auth::user()->update();
+            
+            return redirect()->back();
+        } else {
+            $article->like = ($article->like)-1;
+            $article->save();
+            auth::user()->likearticle = !auth::user()->likearticle;
+            auth::user()->update();
+            return redirect()->back();
 
-        return redirect()->back();
+        }
     }
 
-    public function lessLiked(Article $article)
-    {
-        $article->like = ($article->like)-1;
-        $article->save();
+    // public function lessLiked(Article $article)
+    // {
+    //     $article->like = ($article->like)-1;
+    //     $article->save();
         
-        return redirect()->back();
-    }
+    //     return redirect()->back();
+    // }
 }

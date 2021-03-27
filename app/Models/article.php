@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Tag;
+use App\Models\Like;
 use App\Models\User;
 use App\Models\Image;
 use App\Models\Comment;
@@ -22,6 +23,8 @@ class Article extends Model
     public function user(){
        return $this->belongsTo(User::class);
     }
+
+    
 
     public function category(){
        return $this->belongsTo(Category::class);
@@ -50,4 +53,6 @@ class Article extends Model
             return Storage::url($img->url);    
         }
     } 
+
+  
 }

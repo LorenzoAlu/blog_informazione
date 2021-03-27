@@ -47,10 +47,10 @@
                 </form>
                     
                 
-                <form action="{{route('articles.lessLiked',$article)}}" method="POST">
+                {{-- <form action="{{route('articles.lessLiked',$article)}}" method="POST">
                     @csrf
                 <button  type='submit' class="btn btn-warning">unLike</button>
-            </form>
+            </form> --}}
                     
                 
 
