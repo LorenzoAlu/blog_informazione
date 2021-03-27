@@ -80,6 +80,7 @@
                                 Modifica
                             </button>
                         @endif
+                        @if (Auth::user()!= null)    
                         @if($comment->user->id==Auth::id() || Auth::user()->isAdmin())
                             <form action="{{route('comments.destroy',$comment)}}" method="POST">
                                 @csrf
@@ -89,6 +90,7 @@
                              </button>
                             </form>
                         </div>
+                        @endif
                         @endif
                     </div>
                 @endforeach
