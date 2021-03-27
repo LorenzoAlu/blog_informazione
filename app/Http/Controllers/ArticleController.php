@@ -148,5 +148,19 @@ class ArticleController extends Controller
        return redirect()->back()->with('message',"L'articolo $article->title è stato cancellato!");
     }
 
+    public function addLiked(Article $article)
+    {
+        $article->like = ($article->like)+1;
+        $article->save();
 
+        return redirect()->back();
+    }
+
+    public function lessLiked(Article $article)
+    {
+        $article->like = ($article->like)-1;
+        $article->save();
+        
+        return redirect()->back();
+    }
 }

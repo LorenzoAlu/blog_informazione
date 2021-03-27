@@ -27,6 +27,7 @@ class ArticleFactory extends Factory
             'body' => $this->faker->sentence,
             'user_id'=>rand(1,30),
             'category_id'=>rand(1,6),
+            'visible'=>true
         ];
     }
 }

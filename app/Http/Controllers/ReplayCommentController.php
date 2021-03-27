@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ReplayComment;
 use Illuminate\Http\Request;
+use App\Models\ReplayComment;
+use Illuminate\Support\Facades\Auth;
 
 class ReplayCommentController extends Controller
 {
@@ -35,7 +36,18 @@ class ReplayCommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Auth::user()->disable == 1 || Auth::user()== null){
+            return redirect()->back()->with('message',"Utente disabilitato! Non puoi creare rispondere al commento!");
+        }
+       $replaycomment=ReplayComment::create([
+           
+           'body'=>$request->input('body'),
+           'comment_id'=>$request->input('comment_id'),
+           'user_id'=>Auth::id(),
+       ]);
+
+       return redirect()->back()->with('message',"La risposta al commento è stata aggiunta");
+
     }
 
     /**

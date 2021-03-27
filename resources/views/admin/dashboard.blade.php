@@ -3,13 +3,19 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center my-5">
-            <div class="col-12">
+            <div class="col-12 text-canter">
                 <h2> Dashboard admin</h2>
-                <ul>
-                    <li>Nome : </li>
-                    <li>Email : </li>
-                    <li>Iscritto Dal: </li>
-                </ul>
+            </div>
+            <div class="d-flex justify-content-evenly">
+                <div class="bg-white shadow d-inline-block rounded-3 ">
+                    <p class="display-3">{{$totalArticle}}</p>
+                    <p>Articoli Pubblicati</p>
+                </div>
+                <div class="bg-white shadow d-inline-block rounded-3">
+                    <p class="display-3">{{$totalUser}}</p>
+                    <p>Utenti Iscritti</p>
+                </div>
+
             </div>
         </div>
     </div>

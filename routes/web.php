@@ -8,9 +8,10 @@ use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ReplayCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,9 @@ Route::any('/indexRicerca', [SearchController::class, 'index'])->name('indexRice
 Route::post('/comments/{article}/store', [CommentController::class,'store'])->name('comments.store');
 Route::delete('/comments/{comment}/destroy', [CommentController::class,'destroy'])->name('comments.destroy');
 Route::post('/comments/{comment}/update', [CommentController::class,'update'])->name('comments.update');
+Route::post('/replayComments/{replayComment}/store', [ReplayCommentController::class,'store'])->name('replayComments.store');
+Route::post('/articles/{article}/addLiked', [ArticleController::class, 'addLiked'])->name('articles.addLiked');
+Route::post('/articles/{article}/lessLiked', [ArticleController::class, 'lessLiked'])->name('articles.lessLiked');
 
 // Route::get('/admin/{user}/showArticles',[AdminController::class, 'showArticles'])->name('admin.showArticles');
 

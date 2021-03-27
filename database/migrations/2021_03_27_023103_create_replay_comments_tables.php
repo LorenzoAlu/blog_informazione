@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReplayCommentsTable extends Migration
+class CreateReplayCommentsTables extends Migration
 {
     /**
      * Run the migrations.
@@ -18,9 +18,12 @@ class CreateReplayCommentsTable extends Migration
             $table->text('body');
             $table->unsignedBigInteger('comment_id');
             $table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -29,6 +32,6 @@ class CreateReplayCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('replay_comments');
+        Schema::dropIfExists('replay_comments_tables');
     }
 }

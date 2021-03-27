@@ -12,7 +12,9 @@ class AdminController extends Controller
     public function dashboard(){
         $users=User::orderBy('id','desc')->paginate(5);
         $articles=Article::orderBy('id','desc')->paginate(5);
-        return view('admin.dashboard', compact('users', 'articles'));
+        $totalArticle=count(Article::all());
+        $totalUser=count(User::all());
+        return view('admin.dashboard', compact('users', 'articles','totalArticle','totalUser'));
     }
 
     public function articlesForUser(User $user){
