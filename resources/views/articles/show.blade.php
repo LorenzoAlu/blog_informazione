@@ -5,7 +5,7 @@
 
 @section('content')
 
-{{-- articolo --}}
+    {{-- articolo --}}
     <div class="container-fluid my-5 py-5">
         <div class="row justify-content-center ">
             <div class="col-10 bg-white  rounded shadow p-3">
@@ -38,25 +38,29 @@
                     <small>Scritto da: {{ $article->user->name }}</small>
                     <time>Data Pubblicazione: {{ $article->created_at->format('d/m/y') }}</time>
                 </div>
-                {{-- Prova like button  --}}
-                
-                @if($liked == false)
-                <form action="{{route('articles.addLiked',$article)}}" method="POST">
-                    @csrf
-                <button  type='submit' class="btn btn-warning">Like</button>
-                Numero like : 
-                {{count($article->likes)}}
-                </form>   
+                {{-- Prova like button --}}
+
+                @if ($liked == false)
+                    <form action="{{ route('articles.addLiked', $article) }}" method="POST">
+                        @csrf
+                        <button type='submit' class="btn">
+                            <i class="btn-like far fa-heart fa-2x"></i>
+                        </button>
+                        Numero like :
+                        {{ count($article->likes) }}
+                    </form>
                 @else
-                <form action="{{route('articles.lessLiked',$article)}}" method="POST">
-                    @csrf
-                <button  type='submit' class="btn btn-warning">unLike</button>
-            </form>
-            Numero like : 
-            {{count($article->likes)}}
-            @endif
-                    
-                
+                    <form action="{{ route('articles.lessLiked', $article) }}" method="POST">
+                        @csrf
+                        <button type='submit' class="btn ">
+                            <i class="btn-like fas fa-heart fa-2x"></i>
+                        </button>
+                        Numero like :
+                    {{ count($article->likes) }}
+                    </form>
+                @endif
+
+
 
             </div>
         </div>
@@ -68,9 +72,9 @@
             @if (count($article->comments) == 0)
 
             @else
-            <div class="col-12 text-center">
-                <h2>Commenti</h2>
-            </div>
+                <div class="col-12 text-center">
+                    <h2>Commenti</h2>
+                </div>
                 @foreach ($article->comments as $comment)
                     <div class="col-12 col-md-10 bg-white shadow rounded-3 my-3 p-5">
                         <div id="commentWrapper" class="d-block">
@@ -82,7 +86,7 @@
                                 <div>
                                     <label class="form-label my-3" for="comment">Modifica commenta</label>
                                     <textarea class="form-control" name="body" id="comment" cols="20" rows="5">{{ $comment->body }}
-                                    </textarea>
+                                        </textarea>
                                 </div>
                                 <div class="my-3">
                                     <button type="submit" class="btn background-accent w-100">Modifica</button>
@@ -93,69 +97,73 @@
                             <small>Commento di:{{ $comment->user->name }}</small>
                             <small>Creato il :{{ $comment->created_at->format('d/m/Y') }}</small>
                         </div>
-                        @if($comment->user->id==Auth::id()) 
-                        <div class="my-3 d-flex justify-content-between">
-                            <button id="ModifyComment" class="btn background-accent">
-                                Modifica
-                            </button>
+                        @if ($comment->user->id == Auth::id())
+                            <div class="my-3 d-flex justify-content-between">
+                                <button id="ModifyComment" class="btn background-accent">
+                                    Modifica
+                                </button>
                         @endif
-                        @if (Auth::user()!= null)    
-                        @if($comment->user->id==Auth::id() || Auth::user()->isAdmin())
-                            <form action="{{route('comments.destroy',$comment)}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                            <button type="submit" class="btn bg-danger">
-                                Elimina
-                             </button>
-                            </form>
-                        </div>
-                        @endif
-                        @endif
-                        <div class="text-end">
-                         <button id="btn_replay" class="btn">
-                            <strong> <small> Rispondi al commento</small></strong>
-                        </button> 
-                        </div>
-
+                        @if (Auth::user() != null)
+                            @if ($comment->user->id == Auth::id() || Auth::user()->isAdmin())
+                                <form action="{{ route('comments.destroy', $comment) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn bg-danger">
+                                        Elimina
+                                    </button>
+                                </form>
                     </div>
-                    @foreach ($comment->replayComments as $replayComment)
-                    <div class="col-10 col-md-8 bg-white shadow rounded-3 my-3 p-3">
-                        <strong><small> 
-                            Risposta dell'utente: {{$replayComment->user->name}} 
-                          al commento dell'utente: {{$comment->user->name}}</small></strong> 
-                      <strong><p>Risposta:</p></strong>
-                        <p>{{$replayComment->body}}</p>
-                       <small> <strong><p>Creata il: {{$replayComment->created_at->format('d/m/Y')}}</p></strong></small>
-
-                    </div>   
-                    @endforeach
-                    {{-- form rispondi commento  --}}
-                    <div id="ReplayWrapped" class="d-none col-10 col-md-8 bg-white shadow rounded-3 my-3 p-3">
-                        <form action="{{route('replayComments.store',$comment)}}" method="POST">
-                            @csrf
-                            <div>
-                            <strong>Rispondi al commento di
-                                 {{$comment->user->name}}
-                                </strong>
-                            </div>
-                            <div>
-                                <input class="form-control" type="hidden"   value="{{$comment->id}}" name='comment_id'> 
-                            </div>
-                            <div>
-                                <label class="form-label my-3" for="comment">Rispondi Al Commenta</label>
-                                <textarea class="form-control" name="body" id="comment" cols="20" rows="5"></textarea>
-                            </div>
-                            <div class="my-3">
-                                <button type="submit" class="btn background-accent w-100">Rispodi</button>
-                            </div>
-                        </form>
-                    </div> 
-                   
-                @endforeach
+                @endif
             @endif
-          
-            
+            <div class="text-end">
+                <button id="btn_replay" class="btn">
+                    <strong> <small> Rispondi al commento</small></strong>
+                </button>
+            </div>
+
         </div>
+        @foreach ($comment->replayComments as $replayComment)
+            <div class="col-10 col-md-8 bg-white shadow rounded-3 my-3 p-3">
+                <strong><small>
+                        Risposta dell'utente: {{ $replayComment->user->name }}
+                        al commento dell'utente: {{ $comment->user->name }}</small></strong>
+                <strong>
+                    <p>Risposta:</p>
+                </strong>
+                <p>{{ $replayComment->body }}</p>
+                <small> <strong>
+                        <p>Creata il: {{ $replayComment->created_at->format('d/m/Y') }}</p>
+                    </strong></small>
+
+            </div>
+        @endforeach
+        {{-- form rispondi commento --}}
+        <div id="ReplayWrapped" class="d-none col-10 col-md-8 bg-white shadow rounded-3 my-3 p-3">
+            <form action="{{ route('replayComments.store', $comment) }}" method="POST">
+                @csrf
+                <div>
+                    <strong>Rispondi al commento di
+                        {{ $comment->user->name }}
+                    </strong>
+                </div>
+                <div>
+                    <input class="form-control" type="hidden" value="{{ $comment->id }}" name='comment_id'>
+                </div>
+                <div>
+                    <label class="form-label my-3" for="comment">Rispondi Al Commenta</label>
+                    <textarea class="form-control" name="body" id="comment" cols="20" rows="5"></textarea>
+                </div>
+                <div class="my-3">
+                    <button type="submit" class="btn background-accent w-100">Rispodi</button>
+                </div>
+            </form>
+        </div>
+
+        @endforeach
+        @endif
+
+
+    </div>
     </div>
 
     {{-- sezione commenti --}}
@@ -184,7 +192,7 @@
         </div>
     </div>
 
-{{-- articoli correlati  --}}
+    {{-- articoli correlati --}}
     <div class="container-fluid">
         <div class="row">
             <div class="col-12  text-center my-5">

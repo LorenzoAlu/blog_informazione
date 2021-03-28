@@ -209,9 +209,6 @@ class ArticleController extends Controller
 
         $like = $article->likes()->where('user_id', '=', Auth::id())->delete();
 
-        // dd($like);
-        // $lessLike = Like::find($like);
-        // $lessLike->delete();
 
         return redirect()->back();
     }

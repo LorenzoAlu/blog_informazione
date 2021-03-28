@@ -11121,6 +11121,15 @@ header .overlay {
   cursor: pointer;
 }
 
+.btn-like {
+  color: var(--secondary-color);
+  transition: 1s;
+}
+
+.btn-like:hover {
+  transform: scale(1.2);
+}
+
 /* footer  */
 .list-item-footer {
   list-style: none;
