@@ -40,17 +40,21 @@
                 </div>
                 {{-- Prova like button  --}}
                 
+                @if($liked == false)
                 <form action="{{route('articles.addLiked',$article)}}" method="POST">
                     @csrf
                 <button  type='submit' class="btn btn-warning">Like</button>
-                Numero like : {{$article->like}}
-                </form>
-                    
-                
-                {{-- <form action="{{route('articles.lessLiked',$article)}}" method="POST">
+                Numero like : 
+                {{count($article->likes)}}
+                </form>   
+                @else
+                <form action="{{route('articles.lessLiked',$article)}}" method="POST">
                     @csrf
                 <button  type='submit' class="btn btn-warning">unLike</button>
-            </form> --}}
+            </form>
+            Numero like : 
+            {{count($article->likes)}}
+            @endif
                     
                 
 

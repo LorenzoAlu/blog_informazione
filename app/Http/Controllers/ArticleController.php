@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tag;
+use App\Models\Like;
 use App\Models\User;
 use App\Models\Image;
 use Mockery\Undefined;
@@ -99,7 +100,16 @@ class ArticleController extends Controller
         $relatedLessFalse =$relatedLessFirst->filter(function($article){
             return $article->visible==true;
         });
-        return view('articles.show', compact('article','relatedLessFalse'));
+        $likes= $article->likes()->get();
+        $liked = false;
+        foreach($likes as $like){
+            if($like->user_id == Auth::id()){
+                $liked= true;
+                break;
+            }
+        }
+
+        return view('articles.show', compact('article','relatedLessFalse','likes','liked'));
 
     }
 
@@ -149,30 +159,61 @@ class ArticleController extends Controller
        return redirect()->back()->with('message',"L'articolo $article->title è stato cancellato!");
     }
 
-    public function addLiked(Article $article)
-    {
-        if(auth::user()->likearticle == false){  
-            $article->like = ($article->like)+1;
-            $article->save();
-            auth::user()->likearticle = !auth::user()->likearticle;
-            auth::user()->update();
-            
-            return redirect()->back();
-        } else {
-            $article->like = ($article->like)-1;
-            $article->save();
-            auth::user()->likearticle = !auth::user()->likearticle;
-            auth::user()->update();
-            return redirect()->back();
+    // public function addLiked(Article $article )
+    // {   
+    //     if(auth::user()== null ){
+    //         return redirect()->back()->with('message','Devi essere loggato per mettere mi piace');
+    //     }
 
+
+    //     if(auth::user()->likearticle == false){  
+    //         $article->like = ($article->like)+1;
+    //         $article->save();
+    //         auth::user()->likearticle = !auth::user()->likearticle;
+    //         auth::user()->update();
+            
+    //         return redirect()->back();
+    //     } else {
+    //         $article->like = ($article->like)-1;
+    //         $article->save();
+    //         auth::user()->likearticle = !auth::user()->likearticle;
+    //         auth::user()->update();
+    //         return redirect()->back();
+
+    //     }
+    // }
+
+    public function addLiked(Article $article ){
+
+        if(Auth::user() == null){
+            return redirect()->back()->with('message',"Devi essere loggato !");
         }
+        // dd($article->likes[0]->user_id);
+        // dd(Auth::user()->likes );
+        
+        $like= Like::create([
+            'article_id'=> $article->id,
+            'user_id'=>Auth::id(),
+            'likesNumer'=>true,
+        ]);
+
+            
+
+        return redirect()->back();
+
+
+       
     }
 
-    // public function lessLiked(Article $article)
-    // {
-    //     $article->like = ($article->like)-1;
-    //     $article->save();
-        
-    //     return redirect()->back();
-    // }
+    public function lessLiked(Article $article){
+
+        $like = $article->likes()->where('user_id', '=', Auth::id())->delete();
+
+        // dd($like);
+        // $lessLike = Like::find($like);
+        // $lessLike->delete();
+
+        return redirect()->back();
+    }
+ 
 }
