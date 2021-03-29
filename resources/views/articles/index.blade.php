@@ -6,31 +6,30 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
+            <div class="col-12 col-md-10 mt-4">
+                <div class="row ">
                 <form action="{{ route('indexRicerca') }}" method="POST" class="card card-sm">
                     @csrf
-                    <div class="card-body row no-gutters align-items-center">
-                        <div class="col">
+                    <div class="p-3 shadow-lg row no-gutters align-items-center rounded-3">
+                        <div class="col-12 col-md-5 my-3">
                             <input name="searchWord" class="form-control form-control-lg form-control-borderless"
                                 type="text" placeholder="Cerca Articolo">
                         </div>
-                        <div class="col">
-                            <label for="category" class="form-label">Categoria</label>
-
-                            <select name="category_id" id="category_id">
+                        <div class="col-12 col-md-5 my-3">
+                            <select class="form-control" name="category_id" id="category_id">
                                 <option value="0">Tutte le categorie</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
-
                             </select>
                         </div>
-                        <div class="col-auto">
+                        <div class="col-12 col-md-2 d-flex justify-content-center my-3">
                             <button class="btn btn-lg background-accent text-white" type="submit">Search</button>
                         </div>
                         <!--end of col-->
                     </div>
                 </form>
+                </div>
             </div>
             <!--end of col-->
         </div>

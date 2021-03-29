@@ -20,6 +20,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4ff5c0a70f.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+
 
 </head>
 <body>

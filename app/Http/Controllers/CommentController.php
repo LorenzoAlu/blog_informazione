@@ -39,7 +39,7 @@ class CommentController extends Controller
      */
     public function store(Request $request, Article $article)
     {
-        if(Auth::id()==null){
+        if(Auth::user()==null){
             return redirect()->back()->with('message', 'Devi essere loggato per poter commentare');
         }
 
