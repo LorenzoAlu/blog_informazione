@@ -56,17 +56,12 @@ Route::post('/articles/{article}/lessLiked', [ArticleController::class, 'lessLik
 
 
 Route::middleware([AdminMiddleware::class])->group(function(){
-    
     Route::get('/admin/dashboard',[AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::get('/articles/{user}', [AdminController::class, 'articlesForUser'])->name('articles.for.user');
     Route::delete('/users/{user}/destroy', [AdminController::class, 'destroyUser'])->name('user.destroy');
     Route::get('/user/{user}/toggle', [AdminController::class, 'toggleUser'])->name('user.toggle');
     Route::get('/admin/revisionate', [AdminController::class, 'revisionate'])->name('admin.revisionate');
     Route::get('/articles/{article}/approved', [AdminController::class, 'approved'])->name('articles.approved');
-
-
-
-
 });
 
 

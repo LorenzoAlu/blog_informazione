@@ -108,7 +108,7 @@ class ArticleController extends Controller
                 break;
             }
         }
-
+       
         return view('articles.show', compact('article','relatedLessFalse','likes','liked'));
 
     }

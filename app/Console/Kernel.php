@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\SendMailToUsers;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        SendMailToUsers::class,
     ];
 
     /**
@@ -24,7 +25,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('mail:SendMailToUsers')->everyMinute();
+
+        //per far funzionare il programma in maniera dinamica utilizzare il programma 
+        //php artisan schedule:work
+        //non rompere le convenzioni di laravel
+        //per inviare una mail al giorno sostituire il comando everyMinute() con daily().
     }
 
     /**

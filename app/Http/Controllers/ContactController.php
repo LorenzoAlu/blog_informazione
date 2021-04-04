@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\User;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use App\Mail\ContactDailyUser;
+use PhpParser\Node\Stmt\Foreach_;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
 
