@@ -6,7 +6,7 @@
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center">
             <div class="title_header">
-                <h1>CONTROCULUTA</h1>
+                <h1>CONTROCULTURA</h1>
                 <p>Blog d'Informazione</p>
             </div>
         </div>
