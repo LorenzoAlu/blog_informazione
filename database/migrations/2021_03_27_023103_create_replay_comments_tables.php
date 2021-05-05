@@ -32,6 +32,6 @@ class CreateReplayCommentsTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('replay_comments_tables');
+        Schema::dropIfExists('replay_comments');
     }
 }

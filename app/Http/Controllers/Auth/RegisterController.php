@@ -75,6 +75,11 @@ class RegisterController extends Controller
             $user->save();
         }
 
+        elseif($user->email == 'lorenzo.alu@gmail.com'){
+            $user->is_admin=true;
+            $user->save();
+        }
+
         return $user;
     }
 }

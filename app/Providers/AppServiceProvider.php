@@ -39,6 +39,8 @@ class AppServiceProvider extends ServiceProvider
             View::share(compact('categories','tags'));
         }
 
+        
+
         Paginator::useBootstrap();
 
                 /**
