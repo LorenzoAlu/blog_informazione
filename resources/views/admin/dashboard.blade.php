@@ -7,11 +7,11 @@
                 <h2> Dashboard admin</h2>
             </div>
             <div class="d-flex justify-content-evenly">
-                <div class="bg-white shadow d-inline-block rounded-3 ">
+                <div class="input-shadow-form  border-custom-card-dashboard shadow" >
                     <p class="display-3">{{$totalArticle}}</p>
                     <p>Articoli Pubblicati</p>
                 </div>
-                <div class="bg-white shadow d-inline-block rounded-3">
+                <div class="input-shadow-form  border-custom-card-dashboard shadow">
                     <p class="display-3">{{$totalUser}}</p>
                     <p>Utenti Iscritti</p>
                 </div>

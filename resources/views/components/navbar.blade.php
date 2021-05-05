@@ -58,7 +58,7 @@
                 @else
                     {{-- admin dropdown --}}
                     @if (Auth::user() && Auth::user()->isAdmin())
-                        <li class="nav-item dropdown pe-2">
+                        <li class="nav-item dropdown pe-2 dropstart">
                             <a id="nav_link_5" class="nav-link dropdown-toggle" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Admin
@@ -79,13 +79,13 @@
                         </li>
                     @endif
                     {{-- utente dropdown --}}
-                    <li class="nav-item dropdown pe-2">
+                    <li class="nav-item dropdown pe-2 dropstart">
                         <a id="nav_link_5" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item" href="{{ route('users.profile') }}">
                                 Profilo
