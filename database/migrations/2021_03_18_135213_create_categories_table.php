@@ -2,10 +2,10 @@
 
 
 
-use App\Models\Category;
-
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Models\Category;
 
 class CreateCategoriesTable extends Migration
 {
@@ -16,8 +16,8 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-        Illuminate\Support\Facades\Schema::dropIfExists('categories');
-        Illuminate\Support\Facades\Schema::create('categories', function (Blueprint $table) {
+        Schema::dropIfExists('categories');
+        Schema::create('categories', function (Blueprint $table) {
 
             $table->id();
             $table->string('name');
@@ -47,6 +47,6 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
-        Illuminate\Support\Facades\Schema::dropIfExists('categories');
+        Schema::dropIfExists('categories');
     }
 }
