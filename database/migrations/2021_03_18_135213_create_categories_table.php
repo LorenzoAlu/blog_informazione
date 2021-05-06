@@ -26,10 +26,10 @@ class CreateCategoriesTable extends Migration
             'Politica','Spettacolo','Sport','Motori','Attualità','Tecnologia'
         ];
 
-        foreach ($categories as $category) {
-                $c= new Category();
-                $c->name=$category;
-                $c->save();
+        foreach($categories as $category){
+            $c = new Category();
+            $c->name = $category;
+            $c->save();
         }
     }
 
