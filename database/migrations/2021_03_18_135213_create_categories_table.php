@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Category;
+use App\models\Category;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -24,7 +24,12 @@ class CreateCategoriesTable extends Migration
         });
 
         $categories=[
-            'Politica','Spettacolo','Sport','Motori','Attualità','Tecnologia'
+            'Politica',
+            'Spettacolo',
+            'Sport',
+            'Motori',
+            'Attualità',
+            'Tecnologia'
         ];
 
         foreach($categories as $category){
