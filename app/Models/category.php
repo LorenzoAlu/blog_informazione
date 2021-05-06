@@ -11,7 +11,8 @@ class Category extends Model
     use HasFactory;
 
     public function articles(){
-      return  $this->hasMany(Article::class);
-    }
-    //test
+        return  $this->hasMany(Article::class);
+      }
 }
+
+

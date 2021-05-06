@@ -56,6 +56,4 @@ class Article extends Model
             return Storage::url($img->url);    
         }
     } 
-
-  
 }
