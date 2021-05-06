@@ -4,12 +4,12 @@ namespace App\Providers;
 
 use App\Models\Tag;
 use App\Models\Category;
-use Illuminate\Support\Collection;
+// use Illuminate\Support\Collection;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Pagination\LengthAwarePaginator;
+// use Illuminate\Pagination\LengthAwarePaginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        if(Schema::hasTable('categories','articles','tags')){
+        if(Schema::hasTable('categories') && Schema::hasTable('tags') && Schema::hasTable('articles')){
             $categories=Category::all();
             $tags=Tag::all();
             // View::share('categories',$categories);
