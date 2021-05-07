@@ -8,6 +8,7 @@ const img_show = document.querySelector('#img_show')
 const modifyComment = document.querySelectorAll('#ModifyComment')
 const attualComment = document.querySelectorAll('#commentWrapper')
 const NewComment = document.querySelectorAll('#commentWrapperNew')
+const navbarToggle = document.querySelector('#navbarToggle')
 
 let comment_opened = false
 let img_opened = false
@@ -18,6 +19,7 @@ navbar.style.height = "100px"
 for (let i = 0; i < link.length; i++) {
     link[i].classList.add("accent_hover");
 }
+navbarToggle.classList.add('bg-dark')
 
 window.addEventListener("scroll", () => {
 
@@ -39,6 +41,10 @@ window.addEventListener("scroll", () => {
             el.classList.add("secondary_hover");
         })
 
+        
+        navbarToggle.classList.remove('bg-dark')
+        navbarToggle.classList.add('bg-white')
+
     } else {
         navbar.classList.remove("navbar-light", "bg-white")
         navbar.classList.add("bg-dark", "navbar-dark")
@@ -54,6 +60,11 @@ window.addEventListener("scroll", () => {
             el.classList.add("accent_hover");
             el.classList.remove("secondary_hover");
         })
+
+        navbarToggle.classList.add('bg-dark')
+        navbarToggle.classList.remove('bg-white')
+
+
 
     }
 })

@@ -15,7 +15,7 @@
             <span class="navbar-toggler-icon "></span>
         </button>
         <!--  Use flexbox utility classes to change how the child elements are justified  -->
-        <div class="collapse navbar-collapse justify-content-between " id="navbarToggle">
+        <div class="collapse navbar-collapse justify-content-between  " id="navbarToggle">
             <ul class="navbar-nav ">
                 <li class="nav-item ps-1 ps-lg-2">
                     <a class="nav-link active" id="nav_link" href="{{ route('home') }}">Home <span
