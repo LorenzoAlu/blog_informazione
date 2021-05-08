@@ -10,7 +10,6 @@
         <div class="row justify-content-center ">
             <div class="col-10 bg-white  rounded shadow p-3">
                 <h1 class="text-center p-2">{{ $article->title }}</h1>
-                <h2 class="text-center">{{ $article->body }}</h2>
                 <p class="text-center"> Categoria:
                     <a href="{{ route('categories.index', $article->category_id) }}">
                         {{ $article->category->name }}
