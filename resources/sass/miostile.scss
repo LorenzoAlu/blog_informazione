@@ -54,7 +54,7 @@ background-color: var(--accent-color);
   
 
   #navbar{
-    transition: 1s;
+    transition: 0.4s;
   }
 
   .div_logo{
@@ -67,13 +67,16 @@ background-color: var(--accent-color);
   }
 
   .logo_navbar{
-transition: 1s;
+transition: 0.4s;
 
+  }
 
+  #navbarToggle{
+    transition: 0.4s;
   }
   
   .accent_hover{
-    transition: 0.5s;
+    transition: 0.4s;
   }
 
   .accent_hover:hover{
@@ -82,7 +85,7 @@ transition: 1s;
   }
 
   .secondary_hover{
-    transition: 0.5s;
+    transition: 0.4s;
   }
 
   .secondary_hover:hover{

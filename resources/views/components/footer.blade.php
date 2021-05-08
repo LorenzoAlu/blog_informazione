@@ -26,8 +26,9 @@
                     alt="immagine del logo">
   
             </div>
-  
-  
         </div>
+        <div class="text-white text-center"><em> Powered by: Lorenzo Marco Alù</em></div>
+        <div class="text-white text-center"><em><small>Sito prova realizzato senza scopo di lucro</small></em></div>
+
     </div>
   </div>

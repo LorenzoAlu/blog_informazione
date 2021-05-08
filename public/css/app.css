@@ -10776,7 +10776,7 @@ body {
 
 /* navbar */
 #navbar {
-  transition: 1s;
+  transition: 0.4s;
 }
 
 .div_logo {
@@ -10788,11 +10788,15 @@ body {
 }
 
 .logo_navbar {
-  transition: 1s;
+  transition: 0.4s;
+}
+
+#navbarToggle {
+  transition: 0.4s;
 }
 
 .accent_hover {
-  transition: 0.5s;
+  transition: 0.4s;
 }
 
 .accent_hover:hover {
@@ -10801,7 +10805,7 @@ body {
 }
 
 .secondary_hover {
-  transition: 0.5s;
+  transition: 0.4s;
 }
 
 .secondary_hover:hover {
